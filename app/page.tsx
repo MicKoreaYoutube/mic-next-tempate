@@ -5,7 +5,8 @@ import { buttonVariants } from "@/components/ui/button"
 
 export default function Page() {
   return (
-    <div className="bg-background">
+    <>
+      <div className="bg-background">
       <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
         <div className="flex max-w-[980px] flex-col items-start gap-2">
           <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
@@ -19,7 +20,7 @@ export default function Page() {
         </div>
         <div className="flex gap-4">
           <Link
-            href={siteConfig.links.docs}
+            href={siteConfig.links.shadcnuiDocs}
             target="_blank"
             rel="noreferrer"
             className={buttonVariants()}
@@ -29,13 +30,14 @@ export default function Page() {
           <Link
             target="_blank"
             rel="noreferrer"
-            href={siteConfig.links.github}
+            href={siteConfig.links.shadcnGithub}
             className={buttonVariants({ variant: "outline" })}
           >
             GitHub
           </Link>
         </div>
       </section>
-  </div>
+   </div>
+    </>
   )
 }
