@@ -63,7 +63,7 @@ export default function Page() {
               target="_blank"
               rel="noreferrer"
               href={siteConfig.links.micGithub}
-              className={buttonVariants({ variant: "outline" })}
+              className={buttonVariants({ variant: "outlineDark" })}
             >
               GitHub
             </Link>
