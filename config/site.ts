@@ -14,5 +14,7 @@ export const siteConfig = {
     shadcnTwitter: "https://twitter.com/shadcn",
     shadcnGithub: "https://github.com/shadcn/ui",
     shadcnuiDocs: "https://ui.shadcn.com",
+    micInstagram: "https://instagram.com/leejunsibal",
+    micGithub: "https://github.com/MicKoreaYoutube/mic-next-template"
   },
 }
