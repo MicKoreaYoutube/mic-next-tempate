@@ -10,6 +10,59 @@ export const siteConfig = {
       href: "/",
     },
   ],
+  footerContent: [
+    {
+      title: "1번줄",
+      content: [
+        {
+          title: "1번 내용",
+          href: "1"
+        },
+        {
+          title: "2번 내용",
+          href: "2"
+        },
+        {
+          title: "3번 내용",
+          href: "3"
+        }
+      ]
+    },
+    {
+      title: "2번줄",
+      content: [
+        {
+          title: "1번 내용",
+          href: "1"
+        },
+        {
+          title: "2번 내용",
+          href: "2"
+        },
+        {
+          title: "3번 내용",
+          href: "3"
+        }
+      ]
+    },
+    {
+      title: "3번줄",
+      content: [
+        {
+          title: "1번 내용",
+          href: "1"
+        },
+        {
+          title: "2번 내용",
+          href: "2"
+        },
+        {
+          title: "3번 내용",
+          href: "3"
+        }
+      ]
+    },
+  ],
   links: {
     shadcnTwitter: "https://twitter.com/shadcn",
     shadcnGithub: "https://github.com/shadcn/ui",
