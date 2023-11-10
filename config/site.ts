@@ -63,6 +63,20 @@ export const siteConfig = {
       ]
     },
   ],
+  FamilySurvice: [
+    {
+      name: "1번 서비스",
+      href: "/1s"
+    },
+    {
+      name: "2번 서비스",
+      href: "/2s"
+    },
+    {
+      name: "3번 서비스",
+      href: "/3s"
+    }
+  ],
   links: {
     shadcnTwitter: "https://twitter.com/shadcn",
     shadcnGithub: "https://github.com/shadcn/ui",

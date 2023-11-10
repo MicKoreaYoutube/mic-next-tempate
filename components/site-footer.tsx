@@ -1,9 +1,23 @@
+'use client';
+
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
+
+import { cn } from "@/lib/utils"
+
 import { buttonVariants } from "@/components/ui/button"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectLabel,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
 import { Icons } from "@/components/icons"
-import { MainNav } from "@/components/main-nav"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 const items = siteConfig.footerContent
@@ -18,15 +32,18 @@ export function SiteFooter() {
               <Icons.logo className="h-6 w-6" />
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{siteConfig.name}</span>
             </Link>
+            <p className="mt-4 max-w-[400px] text-muted-foreground">
+              {siteConfig.description}
+            </p>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-24 sm:grid-cols-3">
-            {items?.length ? (
+            {siteConfig.footerContent?.length ? (
               <>
-                {items?.map(
+                {siteConfig.footerContent?.map(
                   (item: any, index: any) =>
                     <div key={index}>
-                      <h2 className="mb-6 text-2xl font-semibold text-gray-900 uppercase dark:text-white">{item.title}</h2>
-                      <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                      <h2 className="mb-6 text-2xl font-semibold text-foreground uppercase">{item.title}</h2>
+                      <ul className="text-muted-foreground font-medium">
                         {item.content?.length ? (
                           <>
                             {item.content?.map(
@@ -46,8 +63,38 @@ export function SiteFooter() {
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
+          <span className="text-sm text-muted-foreground sm:text-center">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
           <nav className="flex items-center space-x-1">
+            <Select>
+              <SelectTrigger className="w-40">
+                <SelectValue placeholder="패밀리 서비스" />
+              </SelectTrigger>
+              <SelectContent className="font-RixInooAriDuriR">
+                <SelectGroup>
+                  <SelectLabel>패밀리 서비스</SelectLabel>
+                  {
+                    siteConfig.FamilySurvice?.length ? (
+                      siteConfig.FamilySurvice?.map(
+                        (item: any, index: any) =>
+                          item.href && (
+                            <SelectItem value={item.name}>
+                              <Link
+                                key={index}
+                                href={item.href}
+                                className={cn(
+                                  "font-medium",
+                                  item.disabled && "cursor-not-allowed opacity-80"
+                                )}
+                              >
+                                {item.name}
+                              </Link>
+                            </SelectItem>
+                          )
+                      )
+                    ) : null}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
             <Link
               href={siteConfig.links.micGithub}
               target="_blank"
@@ -74,8 +121,8 @@ export function SiteFooter() {
                   variant: "ghost",
                 })}
               >
-                <Icons.twitter className="h-5 w-5 fill-current" />
-                <span className="sr-only">Twitter</span>
+                <Icons.instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
               </div>
             </Link>
             <ThemeToggle />
