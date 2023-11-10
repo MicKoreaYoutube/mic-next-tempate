@@ -6,18 +6,19 @@ import { siteConfig } from "@/config/site"
 
 import { cn } from "@/lib/utils"
 
-import { buttonVariants } from "@/components/ui/button"
+import { buttonVariants, Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
+  DropdownMenuGroup,
+  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { ChevronDown } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -63,14 +64,23 @@ export function SiteFooter() {
           <span className="text-sm text-muted-foreground sm:text-center">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
           <nav className="flex items-center space-x-1">
             <DropdownMenu>
-              <DropdownMenuTrigger>Open</DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuItem>Subscription</DropdownMenuItem>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline">패밀리 서비스&nbsp;<ChevronDown className="h-6 w-6" /></Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-1 font-RixInooAriDuriR">
+                <DropdownMenuGroup>
+                  <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
+                  {siteConfig.FamilySurvice?. length ? (
+                      siteConfig.FamilySurvice?.map(
+                        (item: any, index: any) => 
+                        <Link key={index} href={item.href}>
+                          <DropdownMenuItem>
+                            <span>{item.name}</span>
+                          </DropdownMenuItem>
+                        </Link>
+                      )
+                    ) : null}
+                </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
             <Link
