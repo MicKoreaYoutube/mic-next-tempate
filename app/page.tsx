@@ -9,7 +9,7 @@ export default function Page() {
       <div className="bg-background">
         <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
           <div className="flex flex-col items-start gap-2">
-            <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl font-KBO-Dia-Gothic_bold">
+            <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl font-KBO-Dia-Gothic_bold animate__animated animate__bounce">
               Beautifully designed components <br className="hidden sm:inline" />
               built with Radix UI and Tailwind CSS.
             </h1>
