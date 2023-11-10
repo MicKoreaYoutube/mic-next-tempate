@@ -16,7 +16,7 @@ export default function Loading() {
                             className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
                         >Loading...</span>
                     </div>
-                    <h1 className="text-6xl text-center font-extrabold">loading...</h1>
+                    <h1 className="text-6xl text-center font-extrabold font-KBO-Dia-Gothic_bold">loading...</h1>
                 </section>
             </div>
         </>

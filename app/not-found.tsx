@@ -22,14 +22,14 @@ export default function Loading() {
                         <h1 className="text-6xl font-extrabold leading-tight tracking-tighter md:text-9xl font-KBO-Dia-Gothic_bold">
                             404
                         </h1>
-                        <p className="font-SUITE-regular text-center">
-                            <p className="text-4xl text-slate-500 md:6xl">
+                        <div className="text-center">
+                            <p className="text-4xl text-slate-500 md:6xl font-SUITE-Regular">
                                 No Page Found
                             </p>
-                            <p className="text-lg text-slate-300 md:xl">
+                            <p className="text-lg text-slate-300 md:xl font-SUITE-Regular">
                                 The page your looking for does not exist. Please check the url or the realseNote to check out the problem.
                             </p>
-                        </p>
+                        </div>
                     </div>
                     <div className="flex gap-4 mt-2 justify-center font-TheJamsil5Bold">
                         <Link

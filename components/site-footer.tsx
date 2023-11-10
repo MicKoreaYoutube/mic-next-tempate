@@ -8,19 +8,16 @@ import { cn } from "@/lib/utils"
 
 import { buttonVariants } from "@/components/ui/button"
 import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectLabel,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
-
-const items = siteConfig.footerContent
 
 export function SiteFooter() {
   return (
@@ -65,36 +62,17 @@ export function SiteFooter() {
         <div className="sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-muted-foreground sm:text-center">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
           <nav className="flex items-center space-x-1">
-            <Select>
-              <SelectTrigger className="w-40">
-                <SelectValue placeholder="패밀리 서비스" />
-              </SelectTrigger>
-              <SelectContent className="font-RixInooAriDuriR">
-                <SelectGroup>
-                  <SelectLabel>패밀리 서비스</SelectLabel>
-                  {
-                    siteConfig.FamilySurvice?.length ? (
-                      siteConfig.FamilySurvice?.map(
-                        (item: any, index: any) =>
-                          item.href && (
-                            <SelectItem value={item.name}>
-                              <Link
-                                key={index}
-                                href={item.href}
-                                className={cn(
-                                  "font-medium",
-                                  item.disabled && "cursor-not-allowed opacity-80"
-                                )}
-                              >
-                                {item.name}
-                              </Link>
-                            </SelectItem>
-                          )
-                      )
-                    ) : null}
-                </SelectGroup>
-              </SelectContent>
-            </Select>
+            <DropdownMenu>
+              <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+              <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+                <DropdownMenuItem>Team</DropdownMenuItem>
+                <DropdownMenuItem>Subscription</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <Link
               href={siteConfig.links.micGithub}
               target="_blank"
