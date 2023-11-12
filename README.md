@@ -1,6 +1,6 @@
 # next-template
 
-A Next.js 13 template for building apps with Radix UI and Tailwind CSS.
+A Next.js 13 template for building apps with Radix UI and Tailwind CSS based on shadcn/next-template by MicKoreaYoutube.
 
 ## Usage
 
