@@ -16,15 +16,15 @@ export const siteConfig = {
       content: [
         {
           title: "1번 내용",
-          href: "1"
+          href: "/1"
         },
         {
           title: "2번 내용",
-          href: "2"
+          href: "/2"
         },
         {
           title: "3번 내용",
-          href: "3"
+          href: "/3"
         }
       ]
     },
@@ -33,15 +33,15 @@ export const siteConfig = {
       content: [
         {
           title: "1번 내용",
-          href: "1"
+          href: "/1"
         },
         {
           title: "2번 내용",
-          href: "2"
+          href: "/2"
         },
         {
           title: "3번 내용",
-          href: "3"
+          href: "/3"
         }
       ]
     },
@@ -50,15 +50,15 @@ export const siteConfig = {
       content: [
         {
           title: "1번 내용",
-          href: "1"
+          href: "/1"
         },
         {
           title: "2번 내용",
-          href: "2"
+          href: "/2"
         },
         {
           title: "3번 내용",
-          href: "3"
+          href: "/3"
         }
       ]
     },

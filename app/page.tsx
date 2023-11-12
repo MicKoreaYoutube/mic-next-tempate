@@ -2,8 +2,7 @@
 
 import Link from "next/link"
 
-import { useRef, useEffect } from "react"
-import { useInView, InView } from "react-intersection-observer"
+import { InView } from "react-intersection-observer"
 
 import { siteConfig } from "@/config/site"
 

@@ -3,6 +3,7 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
+import { footerContentInterface, FamilySurviceInterface } from "@/types/footer"
 
 import { cn } from "@/lib/utils"
 
@@ -38,7 +39,7 @@ export function SiteFooter() {
             {siteConfig.footerContent?.length ? (
               <>
                 {siteConfig.footerContent?.map(
-                  (item: any, index: any) =>
+                  (item, index) =>
                     <div key={index}>
                       <h2 className="mb-6 text-2xl font-semibold text-foreground uppercase">{item.title}</h2>
                       <ul className="text-muted-foreground font-medium">
@@ -72,7 +73,7 @@ export function SiteFooter() {
                   <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
                   {siteConfig.FamilySurvice?. length ? (
                       siteConfig.FamilySurvice?.map(
-                        (item: any, index: any) => 
+                        (item, index) => 
                         <Link key={index} href={item.href}>
                           <DropdownMenuItem>
                             <span>{item.name}</span>
