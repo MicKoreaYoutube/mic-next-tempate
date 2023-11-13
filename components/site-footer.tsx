@@ -19,7 +19,7 @@ import {
 
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react"
 
 export function SiteFooter() {
   return (

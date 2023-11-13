@@ -1,12 +1,9 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
-import { Icons } from "@/components/icons"
-import { MainNav } from "@/components/main-nav"
-import { ThemeToggle } from "@/components/theme-toggle"
 
-import { LogIn } from "lucide-react"
+import { buttonVariants } from "@/components/ui/button"
+import { MainNav } from "@/components/main-nav"
 
 export function SiteHeader() {
   return (
