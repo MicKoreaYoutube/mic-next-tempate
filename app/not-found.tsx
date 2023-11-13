@@ -13,7 +13,7 @@ function goBack() {
     history.go(-1)
 }
 
-export default function Loading() {
+export default function NotFound() {
    return (
         <>
             <div className="bg-background flex items-center justify-center h-screen">
