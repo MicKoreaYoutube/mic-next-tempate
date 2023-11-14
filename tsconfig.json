@@ -13,7 +13,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noImplicitAny": true,
-    "allowImportingTsExtensions": true,
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {

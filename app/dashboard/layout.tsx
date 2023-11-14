@@ -3,7 +3,7 @@
 import "@/styles/globals.css"
 import "animate.css"
 
-import { siteConfig } from "@/config/site.tsx"
+import { siteConfig } from "@/config/site"
 
 import { DashboardSidebar } from "@/components/sidebar"
 

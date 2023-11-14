@@ -2,6 +2,8 @@ import Link from "next/link"
 
 import { dashboardSidebarItem } from "@/types/sidebar"
 
+import { IconComponent } from "./icons"
+
 import {
   Accordion,
   AccordionContent,
@@ -41,7 +43,7 @@ export function DashboardSidebar({ items }: any) {
                               (contentItem: any, contentIndex: any) =>
                                 <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                   <CommandItem>
-                                    {contentItem.icon}
+                                    <IconComponent type="radix" />
                                     <span>{contentItem.title}</span>
                                     <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
                                   </CommandItem>

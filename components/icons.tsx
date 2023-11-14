@@ -7,6 +7,8 @@ import {
   type Icon as LucideIcon,
 } from "lucide-react"
 
+import * as radixIcon from "@radix-ui/react-icons"
+
 export type Icon = LucideIcon
 
 export const Icons = {
@@ -30,4 +32,15 @@ export const Icons = {
       ></path>
     </svg>
   ),
+}
+
+export function IconComponent({ type, iconName }: any) {
+  switch (type) {
+    case 'radix':
+      return (
+        null
+      )
+    default:
+      return null
+  }
 }

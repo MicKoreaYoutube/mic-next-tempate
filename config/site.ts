@@ -93,7 +93,7 @@ export const siteConfig = {
         {
           title: "11번 내용",
           href: "/1",
-          icon: <FaceIcon />
+          icon: "<FaceIcon />"
         },
         {
           title: "12번 내용",
