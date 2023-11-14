@@ -21,15 +21,15 @@ interface dashboardSidebarInterface {
   items?: dashboardSidebarItem[]
 }
 
-export function DashboardSidebar({ items }: dashboardSidebarInterface) {
+export function DashboardSidebar({ items }: any) {
   return (
-    <Command className="border rounded-none max-w-[15rem] max-h-screen">
+    <Command className="border rounded-none max-w-[15rem] h-screen">
       <CommandList>
         <Accordion type="multiple" className="w-full">
         {items?.length ? (
               <>
                 {items?.map(
-                  (item, index) =>
+                  (item: any, index: any) =>
                     <AccordionItem key={index} value={item.title}>
                       <AccordionTrigger className="m-1 px-2 py-1.5 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-md">{item.title}</AccordionTrigger>
                       <AccordionContent>
@@ -40,7 +40,6 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                               (item: any, index: any) =>
                               <Link href={item.href}>
                                 <CommandItem key={index}>
-                                  {item.icon}
                                   <span>{item.title}</span>
                                   <CommandShortcut>{item.shortcut}</CommandShortcut>
                                 </CommandItem>

@@ -39,6 +39,8 @@ import {
 
 export default function dashboardPage() {
   return (
-    <></>
+    <>
+      hi!
+    </>
   )
 }
