@@ -3,7 +3,7 @@ import "animate.css"
 
 import { Metadata } from "next"
 
-import { siteConfig } from "@/config/site"
+import { siteConfig } from "@/config/site.tsx"
 import { fontSans } from "@/lib/fonts"
 import { cn } from "@/lib/utils"
 import { SiteHeader } from "@/components/site-header"

@@ -3,7 +3,7 @@
 import "@/styles/globals.css"
 import "animate.css"
 
-import { siteConfig } from "@/config/site"
+import { siteConfig } from "@/config/site.tsx"
 
 import { DashboardSidebar } from "@/components/sidebar"
 
@@ -14,7 +14,7 @@ interface DashboardLayoutProps {
 export default function RootLayout({ children }: DashboardLayoutProps) {
   return (
     <>
-      <div className="relative flex min-h-screen flex-row">
+      <div className="relative flex flex-row">
         <DashboardSidebar items={siteConfig.dashboardSidebarContent} />
         <div>{children}</div>
       </div>

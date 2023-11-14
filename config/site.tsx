@@ -1,3 +1,5 @@
+import { FaceIcon } from "@radix-ui/react-icons"
+
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
@@ -16,15 +18,15 @@ export const siteConfig = {
       content: [
         {
           title: "1번 내용",
-          href: "/1"
+          href: "/11"
         },
         {
           title: "2번 내용",
-          href: "/2"
+          href: "/12"
         },
         {
           title: "3번 내용",
-          href: "/3"
+          href: "/13"
         }
       ]
     },
@@ -33,15 +35,15 @@ export const siteConfig = {
       content: [
         {
           title: "1번 내용",
-          href: "/1"
+          href: "/21"
         },
         {
           title: "2번 내용",
-          href: "/2"
+          href: "/22"
         },
         {
           title: "3번 내용",
-          href: "/3"
+          href: "/23"
         }
       ]
     },
@@ -50,15 +52,15 @@ export const siteConfig = {
       content: [
         {
           title: "1번 내용",
-          href: "/1"
+          href: "/31"
         },
         {
           title: "2번 내용",
-          href: "/2"
+          href: "/32"
         },
         {
           title: "3번 내용",
-          href: "/3"
+          href: "/33"
         }
       ]
     },
@@ -89,15 +91,16 @@ export const siteConfig = {
       title: "1번줄",
       content: [
         {
-          title: "1번 내용",
-          href: "/1"
+          title: "11번 내용",
+          href: "/1",
+          icon: <FaceIcon />
         },
         {
-          title: "2번 내용",
+          title: "12번 내용",
           href: "/2"
         },
         {
-          title: "3번 내용",
+          title: "13번 내용",
           href: "/3"
         }
       ]
@@ -106,15 +109,15 @@ export const siteConfig = {
       title: "2번줄",
       content: [
         {
-          title: "1번 내용",
+          title: "21번 내용",
           href: "/1"
         },
         {
-          title: "2번 내용",
+          title: "22번 내용",
           href: "/2"
         },
         {
-          title: "3번 내용",
+          title: "23번 내용",
           href: "/3"
         }
       ]
@@ -123,15 +126,15 @@ export const siteConfig = {
       title: "3번줄",
       content: [
         {
-          title: "1번 내용",
+          title: "31번 내용",
           href: "/1"
         },
         {
-          title: "2번 내용",
+          title: "32번 내용",
           href: "/2"
         },
         {
-          title: "3번 내용",
+          title: "33번 내용",
           href: "/3"
         }
       ]

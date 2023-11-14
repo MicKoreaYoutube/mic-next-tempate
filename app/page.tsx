@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { InView } from "react-intersection-observer"
 
-import { siteConfig } from "@/config/site"
+import { siteConfig } from "@/config/site.tsx"
 
 import { buttonVariants } from "@/components/ui/button"
 
