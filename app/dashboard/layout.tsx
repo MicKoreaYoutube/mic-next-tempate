@@ -1,49 +1,42 @@
-{/**
-    <Command className="border rounded-none max-w-[15rem] max-h-screen">
-      <CommandList>
-        <Accordion type="multiple" className="w-full">
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="m-1 px-2 py-1.5 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-md">Settings</AccordionTrigger>
-            <AccordionContent>
-              <CommandGroup>
-                <CommandItem>
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  <span>Calendar</span>
-                </CommandItem>
-                <CommandItem>
-                  <FaceIcon className="mr-2 h-4 w-4" />
-                  <span>Search Emoji</span>
-                </CommandItem>
-                <CommandItem>
-                  <RocketIcon className="mr-2 h-4 w-4" />
-                  <span>Launch</span>
-                </CommandItem>
-              </CommandGroup>
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger className="py-1.5">Is it styled?</AccordionTrigger>
-            <AccordionContent>
-              <CommandGroup>
-                <CommandItem>
-                  <PersonIcon className="mr-2 h-4 w-4" />
-                  <span>Profile</span>
-                  <CommandShortcut>⌘P</CommandShortcut>
-                </CommandItem>
-                <CommandItem>
-                  <EnvelopeClosedIcon className="mr-2 h-4 w-4" />
-                  <span>Mail</span>
-                  <CommandShortcut>⌘B</CommandShortcut>
-                </CommandItem>
-                <CommandItem>
-                  <GearIcon className="mr-2 h-4 w-4" />
-                  <span>Settings</span>
-                  <CommandShortcut>⌘S</CommandShortcut>
-                </CommandItem>
-              </CommandGroup>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </CommandList>
-    </Command>
-*/}
+import "@/styles/globals.css"
+import "animate.css"
+
+import { Metadata } from "next"
+
+import { siteConfig } from "@/config/site"
+import { fontSans } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
+
+import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { ThemeProvider } from "@/components/theme-provider"
+
+export const metadata: Metadata = {
+  title: {
+    default: siteConfig.name,
+    template: `${siteConfig.name} - %s`,
+  },
+  description: siteConfig.description,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-16x16.png",
+    apple: "/apple-touch-icon.png",
+  },
+}
+
+interface DashboardLayoutProps {
+  children: React.ReactNode
+}
+
+export default function RootLayout({ children }: DashboardLayoutProps) {
+  return (
+    <>
+      <div className="relative flex min-h-screen flex-col">
+        <div>{children}</div>
+      </div>
+    </>
+  )
+}
