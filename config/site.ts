@@ -92,16 +92,15 @@ export const siteConfig = {
       content: [
         {
           title: "11번 내용",
-          href: "/1",
-          icon: "<FaceIcon />"
+          href: "/11"
         },
         {
           title: "12번 내용",
-          href: "/2"
+          href: "/12"
         },
         {
           title: "13번 내용",
-          href: "/3"
+          href: "/13"
         }
       ]
     },
@@ -110,15 +109,15 @@ export const siteConfig = {
       content: [
         {
           title: "21번 내용",
-          href: "/1"
+          href: "/21"
         },
         {
           title: "22번 내용",
-          href: "/2"
+          href: "/22"
         },
         {
           title: "23번 내용",
-          href: "/3"
+          href: "/23"
         }
       ]
     },
@@ -127,17 +126,21 @@ export const siteConfig = {
       content: [
         {
           title: "31번 내용",
-          href: "/1"
+          href: "/31"
         },
         {
           title: "32번 내용",
-          href: "/2"
+          href: "/32"
         },
         {
           title: "33번 내용",
-          href: "/3"
+          href: "/33"
         }
       ]
     },
+    {
+      title: "4번줄",
+      href: "/4"
+    }
   ],
 }

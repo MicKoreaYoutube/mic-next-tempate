@@ -2,7 +2,8 @@ import React from "react"
 
 export interface dashboardSidebarItem {
     title: string
-    content: [
+    href?: string
+    content?: [
         {
             icon?: React.ReactHTMLElement<any>
             title: string
