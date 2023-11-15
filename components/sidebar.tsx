@@ -26,23 +26,23 @@ interface dashboardSidebarInterface {
 
 export function DashboardSidebar({ items }: dashboardSidebarInterface) {
   return (
-    <Command className="border rounded-none max-w-[15rem] h-screen">
-      <CommandList>
-        <Accordion type="multiple" className="w-full">
-          {items?.length ? (
-            <>
-              {items?.map(
-                (item: any, index: any) => {
-                  item.content?.length ? (
+    <>
+      <Command className="border rounded-none max-w-[15rem] h-screen">
+        <CommandList>
+          <Accordion type="multiple" className="w-full">
+            {items?.length ? (
+              <>
+                {items?.map(
+                  (item, index) => (
                     <>
-                      <AccordionItem key={index} value={item.title}>
-                        <AccordionTrigger className="m-1 font-normal px-2 py-1.5 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-md">{item.title}</AccordionTrigger>
-                        <AccordionContent>
-                          <CommandGroup>
-                            {item.content?.length ? (
+                      {item.content?.length ? (
+                        <AccordionItem key={index} value={item.title}>
+                          <AccordionTrigger className="m-1 font-normal px-2 py-1.5 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-md">{item.title}</AccordionTrigger>
+                          <AccordionContent>
+                            <CommandGroup>
                               <>
                                 {item.content?.map(
-                                  (contentItem: any, contentIndex: any) =>
+                                  (contentItem, contentIndex) => (
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                       <CommandItem>
                                         <IconComponent type="radix" />
@@ -50,20 +50,29 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
                                       </CommandItem>
                                     </Link>
+                                  )
                                 )}
                               </>
-                            ) : null}
-                          </CommandGroup>
-                        </AccordionContent>
-                      </AccordionItem>
+                            </CommandGroup>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ) : (
+                        <Link href={`${item.href}`} key={index}>
+                          <CommandItem className="mx-1">
+                            <IconComponent type="radix" />
+                            <span className="text-md">{item.title}</span>
+                            <CommandShortcut>{item.shortcut}</CommandShortcut>
+                          </CommandItem>
+                        </Link>
+                      )}
                     </>
-                  ) : 2
-                }
-              )}
-            </>
-          ) : null}
-        </Accordion>
-      </CommandList>
-    </Command>
+                  )
+                )}
+              </>
+            ) : null}
+          </Accordion>
+        </CommandList>
+      </Command>
+    </>
   )
 }
