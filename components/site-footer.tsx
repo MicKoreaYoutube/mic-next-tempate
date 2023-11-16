@@ -3,9 +3,6 @@
 import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
-import { footerContentInterface, FamilySurviceInterface } from "@/types/footer"
-
-import { cn } from "@/lib/utils"
 
 import { buttonVariants, Button } from "@/components/ui/button"
 import {

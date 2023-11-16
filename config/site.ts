@@ -2,14 +2,73 @@ import { FaceIcon } from "@radix-ui/react-icons"
 
 export type SiteConfig = typeof siteConfig
 
-export const siteConfig = {
+const siteConfig = {
   name: "Next.js Template",
   description:
     "A nextjs template by MicKoreaYoutube based on shadcn-ui",
   mainNav: [
     {
+      type: "mainLinkAndLinkList",
       title: "Home",
-      href: "/",
+      mainLink: {
+        logo: true,
+        title: "title",
+        description: "",
+        href: "/"
+      },
+      linkList: [
+        {
+          title: "11번 링크",
+          description: "11번 설명",
+          href: "/11"
+        },
+        {
+          title: "12번 링크",
+          description: "12번 설명",
+          href: "/12"
+        },
+        {
+          title: "13번 링크",
+          description: "13번 설명",
+          href: "/13"
+        },
+      ]
+    },
+    {
+      type: "LinkList",
+      title: "dashboard",
+      linkList: [
+        {
+          title: "21번 링크",
+          description: "21번 설명",
+          href: "/21"
+        },
+        {
+          title: "22번 링크",
+          description: "22번 설명",
+          href: "/22"
+        },
+        {
+          title: "23번 링크",
+          description: "23번 설명",
+          href: "/23"
+        },
+        {
+          title: "24번 링크",
+          description: "24번 설명",
+          href: "/24"
+        },
+        {
+          title: "25번 링크",
+          description: "25번 설명",
+          href: "/25"
+        },
+        {
+          title: "26번 링크",
+          description: "26번 설명",
+          href: "/26"
+        },
+      ]
     },
   ],
   footerContent: [
@@ -144,3 +203,10 @@ export const siteConfig = {
     }
   ],
 }
+if (siteConfig.mainNav[0].mainLink) {
+  siteConfig.mainNav[0].mainLink.title = siteConfig.name
+  siteConfig.mainNav[0].mainLink.description = siteConfig.description
+}
+
+export { siteConfig }
+
