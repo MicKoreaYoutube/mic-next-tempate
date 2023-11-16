@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link"
 
 import { dashboardSidebarItem } from "@/types/sidebar"
@@ -20,11 +22,17 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 
+import { useRouter, usePathname, useParams } from "next/navigation"
+
 interface dashboardSidebarInterface {
   items?: dashboardSidebarItem[]
 }
 
 export function DashboardSidebar({ items }: dashboardSidebarInterface) {
+
+  const router = useRouter()
+  const pathName = usePathname()
+
   return (
     <>
       <Command className="border rounded-none max-w-[15rem] h-screen">
@@ -46,7 +54,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                 {item.content?.map(
                                   (contentItem, contentIndex) => (
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
-                                      <CommandItem>
+                                      <CommandItem className={`${index == 0 && contentIndex == 0 && pathName == "/dashboard/00" ? "bg-accent text-accent-foreground" : null}`}>
                                         <IconComponent type="radix" />
                                         <span className="text-md">{contentItem.title}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>

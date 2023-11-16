@@ -37,7 +37,7 @@ import {
   CommandShortcut,
 } from "@/components/ui/command"
 
-export default function dashboardPage() {
+export default function DashboardPage() {
   return (
     <>
       hi!

@@ -11,7 +11,7 @@ interface DashboardLayoutProps {
   children: React.ReactNode
 }
 
-export default function RootLayout({ children }: DashboardLayoutProps) {
+export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <>
       <div className="relative flex flex-row">
