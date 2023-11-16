@@ -2,7 +2,7 @@
 
 import { siteConfig } from "@/config/site"
 
-import { DashboardSidebar } from "@/components/sidebar"
+import { DocsSidebar } from "@/components/sidebar"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -12,8 +12,8 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <>
       <div className="relative flex flex-row">
-        <DashboardSidebar items={siteConfig.dashboardSidebarContent} />
-        <div>{children}</div>
+        <DocsSidebar items={siteConfig.docsSidebarContent} />
+        <div className="m-12">{children}</div>
       </div>
     </>
   )

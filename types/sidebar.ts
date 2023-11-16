@@ -1,5 +1,3 @@
-import React from "react"
-
 export interface dashboardSidebarItem {
     title: string
     href?: string
@@ -10,5 +8,14 @@ export interface dashboardSidebarItem {
         href: string
         shortcut?: string
         disabled?: boolean
+    }>
+}
+
+export interface docsSidebarItem {
+    title: string
+    href?: string
+    content?: Array<{
+        title: string
+        href: string
     }>
 }
