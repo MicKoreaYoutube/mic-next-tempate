@@ -70,6 +70,11 @@ const siteConfig = {
         },
       ]
     },
+    {
+      type: "link",
+      title: "documenation",
+      href: "/docs"
+    }
   ],
   footerContent: [
     {
@@ -200,7 +205,24 @@ const siteConfig = {
     {
       title: "4번줄",
       href: "/4"
-    }
+    },
+    {
+      title: "5번줄",
+      content: [
+        {
+          title: "51번 내용",
+          href: "/51"
+        },
+        {
+          title: "52번 내용",
+          href: "/52"
+        },
+        {
+          title: "53번 내용",
+          href: "/53"
+        }
+      ]
+    },
   ],
 }
 if (siteConfig.mainNav[0].mainLink) {

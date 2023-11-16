@@ -13,12 +13,21 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
+
 import { ChevronDown } from "lucide-react"
 
+import { useState } from "react"
+import { useInView } from "react-intersection-observer"
+
 export function SiteFooter() {
+
+  const [isOpen, changeOpenState] = useState(false)
+  const [FamilySurviceRef, FamilySurviceRefInView] = useInView({
+    threshold: 1
+  })
+
   return (
     <footer className="bg-accent z-40 w-full border-t font-RixInooAriDuriR">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
@@ -43,9 +52,9 @@ export function SiteFooter() {
                         {item.content?.length ? (
                           <>
                             {item.content?.map(
-                              (item: any, index: any) =>
+                              (contentItem, index) =>
                                 <li className="mb-4" key={index}>
-                                  <Link href={item.href} className="hover:underline">{item.title}</Link>
+                                  <Link href={contentItem.href} className="hover:underline">{item.title}</Link>
                                 </li>
                             )}
                           </>
@@ -63,9 +72,9 @@ export function SiteFooter() {
           <nav className="flex items-center space-x-1">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">패밀리 서비스&nbsp;<ChevronDown className="h-6 w-6" /></Button>
+                <Button variant="outline">패밀리 서비스&nbsp;<ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-1 font-RixInooAriDuriR">
+              <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
                 <DropdownMenuGroup>
                   <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
                   {siteConfig.FamilySurvice?. length ? (

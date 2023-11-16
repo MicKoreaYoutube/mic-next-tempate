@@ -29,7 +29,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
     <>
       <Command className="border rounded-none max-w-[15rem] h-screen">
         <CommandList>
-          <Accordion type="multiple" className="w-full">
+          <Accordion type="multiple" className="w-full font-TheJamsil5Bold">
             {items?.length ? (
               <>
                 {items?.map(
@@ -37,7 +37,9 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                     <>
                       {item.content?.length ? (
                         <AccordionItem key={index} value={item.title}>
-                          <AccordionTrigger className="m-1 font-normal px-2 py-1.5 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-md">{item.title}</AccordionTrigger>
+                          <AccordionTrigger className="m-1 font-normal px-2 py-1.5 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-md">
+                            {item.title}
+                          </AccordionTrigger>
                           <AccordionContent>
                             <CommandGroup>
                               <>
@@ -58,7 +60,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                         </AccordionItem>
                       ) : (
                         <Link href={`${item.href}`} key={index}>
-                          <CommandItem className="mx-1">
+                          <CommandItem className="m-1">
                             <IconComponent type="radix" />
                             <span className="text-md">{item.title}</span>
                             <CommandShortcut>{item.shortcut}</CommandShortcut>
