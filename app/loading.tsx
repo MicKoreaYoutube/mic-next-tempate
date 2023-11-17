@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 export default function Loading() {
     return (
         <>
-            <div className="bg-background flex items-center justify-center h-screen">
+            <div className="bg-background flex items-center justify-center h-[80vh]">
                 <section className="container">
                     <div
                         className="block mx-auto h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-foreground motion-reduce:animate-[spin_1.5s_linear_infinite]"

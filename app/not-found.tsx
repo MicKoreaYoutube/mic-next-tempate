@@ -16,7 +16,7 @@ function goBack() {
 export default function NotFound() {
    return (
         <>
-            <div className="bg-background flex items-center justify-center h-screen">
+            <div className="bg-background flex items-center justify-center h-[80vh]">
                 <section className="containe">
                     <div className="flex flex-col items-center gap-2">
                         <h1 className="text-6xl font-extrabold leading-tight tracking-tighter md:text-9xl font-KBO-Dia-Gothic_bold">

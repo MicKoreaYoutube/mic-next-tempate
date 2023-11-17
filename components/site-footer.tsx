@@ -52,9 +52,9 @@ export function SiteFooter() {
                         {item.content?.length ? (
                           <>
                             {item.content?.map(
-                              (contentItem, index) =>
-                                <li className="mb-4" key={index}>
-                                  <Link href={contentItem.href} className="hover:underline">{item.title}</Link>
+                              (contentItem, contentIndex) =>
+                                <li className="mb-4" key={contentIndex}>
+                                  <Link href={contentItem.href} className="hover:underline">{contentItem.title}</Link>
                                 </li>
                             )}
                           </>
