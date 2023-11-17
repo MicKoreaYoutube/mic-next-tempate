@@ -7,7 +7,7 @@ import {
   type Icon as LucideIcon,
 } from "lucide-react"
 
-import * as radixIcon from "@radix-ui/react-icons"
+import * as Radix from "@radix-ui/react-icons"
 
 export type Icon = LucideIcon
 
@@ -38,7 +38,7 @@ export function IconComponent({ type, iconName }: any) {
   switch (type) {
     case 'radix':
       return (
-        null
+        <Radix.FaceIcon />
       )
     default:
       return null
