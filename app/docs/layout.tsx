@@ -4,11 +4,11 @@ import { siteConfig } from "@/config/site"
 
 import { DocsSidebar } from "@/components/sidebar"
 
-interface DashboardLayoutProps {
+interface DocsLayoutProps {
   children: React.ReactNode
 }
 
-export default function DashboardLayout({ children }: DashboardLayoutProps) {
+export default function DocsLayout({ children }: DocsLayoutProps) {
   return (
     <>
       <div className="relative flex flex-row">

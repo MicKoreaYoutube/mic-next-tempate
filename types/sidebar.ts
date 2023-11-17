@@ -13,9 +13,9 @@ export interface dashboardSidebarItem {
 
 export interface docsSidebarItem {
     title: string
-    href?: string
+    href?: boolean
     content?: Array<{
         title: string
-        href: string
+        doc?: string //추후에 doc:으로 변경 지금은 귀찮아서 그럼ㅅㄱ
     }>
 }

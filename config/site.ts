@@ -230,32 +230,28 @@ const siteConfig = {
       content: [
         {
           title: "11번 내용",
-          href: "/11"
+          doc: "시발"
         },
         {
           title: "12번 내용",
-          href: "/12"
         },
         {
           title: "13번 내용",
-          href: "/13"
         }
       ]
     },
     {
       title: "2번줄",
+      href: true,
       content: [
         {
           title: "21번 내용",
-          href: "/21"
         },
         {
           title: "22번 내용",
-          href: "/22"
         },
         {
           title: "23번 내용",
-          href: "/23"
         }
       ]
     },
@@ -264,40 +260,37 @@ const siteConfig = {
       content: [
         {
           title: "31번 내용",
-          href: "/31"
         },
         {
           title: "32번 내용",
-          href: "/32"
         },
         {
           title: "33번 내용",
-          href: "/33"
+          doc: "와 개 좆같다 ㄹㅇ"
         }
       ]
     },
     {
       title: "4번줄",
-      href: "/4"
+      href: true,
+      doc: "무적 LG!"
     },
     {
       title: "5번줄",
       content: [
         {
           title: "51번 내용",
-          href: "/51"
         },
         {
           title: "52번 내용",
-          href: "/52"
         },
         {
           title: "53번 내용",
-          href: "/53"
         }
       ]
     },
   ],
+  docContent: []
 }
 if (siteConfig.mainNav[0].mainLink) {
   siteConfig.mainNav[0].mainLink.title = siteConfig.name

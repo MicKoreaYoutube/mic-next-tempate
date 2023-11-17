@@ -61,9 +61,6 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                   (contentItem, contentIndex) => (
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                       <CommandItem className={`${index == 0 && contentIndex == 0 && pathName == "/dashboard/00" ? "bg-accent text-accent-foreground" : null}`}>
-                                        {contentItem.icon ? (
-                                          <div dangerouslySetInnerHTML={{ __html : contentItem.icon }}></div>
-                                        ) : null}
                                         <span className="text-md">{contentItem.title}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
                                       </CommandItem>
@@ -77,7 +74,6 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                       ) : (
                         <Link href={`${item.href}`} key={index}>
                           <CommandItem className="m-1">
-                            
                             <span className="text-md">{item.title}</span>
                             <CommandShortcut>{item.shortcut}</CommandShortcut>
                           </CommandItem>
@@ -107,11 +103,11 @@ export function DocsSidebar({ items }: docsSidebarInterface) {
             items.map(
               (item, index) => (
                 <div key={index} className="py-4">
-                  <Link href={`${item.href ? item.href : "#"}`} className="block my-3 text-lg font-bold font-KBO-Dia-Gothic_bold">{item.title}</Link>
+                  <Link href={`${item.href ? `/docs/${item.title}` : "#"}`} className={`block my-3 text-lg ${decodeURI(pathName) == `/docs/${item.title}` ? "underline underline-offset-4" : "font-bold"} font-KBO-Dia-Gothic_bold`}>{item.title}</Link>
                   {item.content?.length ? (
                     item.content.map(
                       (contentItem, contentIndex) => (
-                        <Link key={contentIndex} href={contentItem.href} className="block my-1 text-md text-muted-foreground font-SUITE-Regular">{contentItem.title}</Link>
+                        <Link key={contentIndex} href={`/docs/${item.title}/${contentItem.title}`} className={`block my-1 text-md ${decodeURI(pathName) == `/docs/${item.title}/${contentItem.title}` ? "text-foreground font-bold underline underline-offset-4" : "text-muted-foreground"} font-SUITE-Regular`}>{contentItem.title}</Link>
                       )
                     )
                   ) : null}
