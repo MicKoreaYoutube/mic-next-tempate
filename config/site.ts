@@ -230,7 +230,7 @@ const siteConfig = {
       content: [
         {
           title: "11번 내용",
-          doc: "시발"
+          doc: "<p className='text-2xl'>시발</p>"
         },
         {
           title: "12번 내용",
@@ -290,7 +290,6 @@ const siteConfig = {
       ]
     },
   ],
-  docContent: []
 }
 if (siteConfig.mainNav[0].mainLink) {
   siteConfig.mainNav[0].mainLink.title = siteConfig.name

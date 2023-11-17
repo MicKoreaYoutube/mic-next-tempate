@@ -1,10 +1,14 @@
-'use client'
+import { siteConfig } from "@/config/site"
 
-import { usePathname } from "next/navigation"
+import parse from "html-react-parser"
 
 export default function DocsSubjectPage({ params }: { params: { subject: string } }) {
 
-    const pathName = usePathname()
+    const foundObject = siteConfig.docsSidebarContent.find(obj => obj.title == decodeURI(params.subject))
 
-    return <div>My Post: {params.subject} {decodeURI(pathName)}</div>
+    return (
+        <>
+            {foundObject?.doc ? parse(foundObject?.doc) : null}
+        </>
+    )
 }
