@@ -6,12 +6,8 @@ import Link from "next/link"
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
+
 import { Icons } from "@/components/icons"
-
-interface MainNavProps {
-  items?: NavItem[]
-}
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -23,6 +19,10 @@ import {
   NavigaitionMenuListItem
 } from "@/components/ui/navigation-menu"
 import { ScrollArea } from "@/components/ui/scroll-area"
+
+interface MainNavProps {
+  items?: NavItem[]
+}
 
 export function MainNav({ items }: MainNavProps) {
   return (
@@ -47,8 +47,8 @@ export function MainNav({ items }: MainNavProps) {
                         <NavigationMenuTrigger className="bg-transparent">{item.title}</NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <ScrollArea>
-                            <ul className={`${item.type.includes("mainLink") ? "lg:grid-cols-[.75fr_1fr]" : "md:grid-cols-2"} grid gap-3 p-6 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
-                              {item.type.includes("mainLink") ? (
+                            <ul className={`${item.type == "mainLink" ? "lg:grid-cols-[.75fr_1fr]" : "md:grid-cols-2"} grid gap-3 p-6 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
+                              {item.type == "mainLink" ? (
                                 <li className="row-span-3">
                                   <NavigationMenuLink asChild>
                                     <Link className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"

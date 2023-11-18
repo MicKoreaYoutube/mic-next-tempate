@@ -1,5 +1,3 @@
-import { FaceIcon } from "@radix-ui/react-icons"
-
 export type SiteConfig = typeof siteConfig
 
 const siteConfig = {
@@ -8,7 +6,7 @@ const siteConfig = {
     "A nextjs template by MicKoreaYoutube based on shadcn-ui",
   mainNav: [
     {
-      type: "mainLinkAndLinkList",
+      type: "mainLink",
       title: "Home",
       mainLink: {
         logo: true,
