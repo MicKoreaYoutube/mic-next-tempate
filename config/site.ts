@@ -35,7 +35,7 @@ const siteConfig = {
       ]
     },
     {
-      type: "LinkList",
+      type: "linkList",
       title: "dashboard",
       linkList: [
         {
