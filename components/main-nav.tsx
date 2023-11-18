@@ -38,7 +38,7 @@ export function MainNav({ items }: MainNavProps) {
               {items?.map(
                 (item, index) => (
                   <NavigationMenuItem key={index}>
-                    {item.type == "link" ? (
+                    {item.href ? (
                       <Link href={`${item.href}`} className={`${navigationMenuTriggerStyle()} bg-transparent`}>
                           {item.title}
                       </Link>
@@ -47,8 +47,8 @@ export function MainNav({ items }: MainNavProps) {
                         <NavigationMenuTrigger className="bg-transparent">{item.title}</NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <ScrollArea>
-                            <ul className={`${item.type == "mainLink" ? "lg:grid-cols-[.75fr_1fr]" : "md:grid-cols-2"} grid gap-3 p-6 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
-                              {item.type == "mainLink" ? (
+                            <ul className={`${item.mainLink ? "lg:grid-cols-[.75fr_1fr]" : "md:grid-cols-2"} grid gap-3 p-6 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
+                              {item.mainLink ? (
                                 <li className="row-span-3">
                                   <NavigationMenuLink asChild>
                                     <Link className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"

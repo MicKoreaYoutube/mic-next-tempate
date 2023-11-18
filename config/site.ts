@@ -6,11 +6,10 @@ const siteConfig = {
     "A nextjs template by MicKoreaYoutube based on shadcn-ui",
   mainNav: [
     {
-      type: "mainLink",
       title: "Home",
       mainLink: {
         logo: true,
-        title: "title",
+        title: "",
         description: "",
         href: "/"
       },
@@ -33,7 +32,6 @@ const siteConfig = {
       ]
     },
     {
-      type: "linkList",
       title: "dashboard",
       linkList: [
         {
@@ -69,7 +67,6 @@ const siteConfig = {
       ]
     },
     {
-      type: "link",
       title: "documenation",
       href: "/docs"
     }
