@@ -16,6 +16,6 @@ export interface docsSidebarItem {
     href?: boolean
     content?: Array<{
         title: string
-        doc: string //추후에 doc:으로 변경 지금은 귀찮아서 그럼ㅅㄱ
+        doc?: string //추후에 doc:으로 변경 지금은 귀찮아서 그럼ㅅㄱ
     }>
 }
