@@ -61,7 +61,7 @@ import { MainNav } from "@/components/main-nav"
 
 export function SiteHeader() {
 
-  const [isLogin, changeLoginState] = useState(true)
+  const [isLogin, changeLoginState] = useState(false)
 
   const [open, setOpen] = useState(false)
 
@@ -120,9 +120,13 @@ export function SiteHeader() {
               </CommandGroup>
             </CommandList>
           </CommandDialog>
-          <Button className="w-52 bg-transparent shadow-sm flex justify-between" variant="outline" onClick={()=>{
+          <Button className="w-52 bg-transparent shadow-sm flex justify-between" 
+            variant="outline" 
+            onClick={() => {
             setOpen(true)
-          }}><span>Search anything</span><span className="border border-input rounded-lg bg-background px-2 py-1">⌘K</span></Button>
+          }}>
+            <span>Search anything</span><span className="border border-input rounded-lg bg-background px-2 py-1">⌘K</span>
+          </Button>
           {isLogin ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
