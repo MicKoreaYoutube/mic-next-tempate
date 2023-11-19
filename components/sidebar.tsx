@@ -24,6 +24,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 import { usePathname } from "next/navigation"
+import { useState } from "react"
 
 import parse from "html-react-parser"
 
@@ -126,15 +127,20 @@ export function DocsSidebar({ items }: docsSidebarInterface) {
 }
 
 export function ChapterSidebar({ items }: chapterSidebarInterface) {
+
+  const [selectedChapter, selectChapter] = useState("")
+
   return (
-    <div className="w-32 border-l">
+    <div className="w-32">
       <div className="w-full p-6 fixed">
         <h1 className="font-bold font-KBO-Dia-Gothic_bold">Chapter</h1>
         <div className="flex flex-col">
           {items?.length ? (
             items.map(
               (item, index) => (
-                <Link key={index} href={`#chapter-${item}`} className="font-SUITE-Regular">{item}</Link>
+                <Link key={index} href={`#chapter-${item}`} className={`${selectedChapter == item ? "font-bold" : null} font-SUITE-Regular`} onClick={()=>{
+                  selectChapter(item)
+                }}>{item}</Link>
               )
             )
           ) : null}
