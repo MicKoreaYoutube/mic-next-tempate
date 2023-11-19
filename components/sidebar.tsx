@@ -35,6 +35,10 @@ interface docsSidebarInterface {
   items?: docsSidebarItem[]
 }
 
+interface chapterSidebarInterface {
+  items?: string[] | undefined
+}
+
 export function DashboardSidebar({ items }: dashboardSidebarInterface) {
 
   const pathName = usePathname()
@@ -118,5 +122,24 @@ export function DocsSidebar({ items }: docsSidebarInterface) {
         </div>
       </ScrollArea>
     </>
+  )
+}
+
+export function ChapterSidebar({ items }: chapterSidebarInterface) {
+  return (
+    <div className="w-32 border-l">
+      <div className="w-full p-6 fixed">
+        <h1 className="font-bold font-KBO-Dia-Gothic_bold">Chapter</h1>
+        <div className="flex flex-col">
+          {items?.length ? (
+            items.map(
+              (item, index) => (
+                <Link key={index} href={`#chapter-${item}`} className="font-SUITE-Regular">{item}</Link>
+              )
+            )
+          ) : null}
+        </div>
+      </div>
+    </div>
   )
 }

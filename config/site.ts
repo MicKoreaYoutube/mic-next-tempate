@@ -225,7 +225,8 @@ const siteConfig = {
       content: [
         {
           title: "11번 내용",
-          doc: "<p className='text-2xl'>시발</p>"
+          doc: "<p className='text-2xl'>시발</p>",
+          chapter: ["test1", "test2", "test3"]
         },
         {
           title: "12번 내용",
@@ -268,7 +269,8 @@ const siteConfig = {
     {
       title: "4번줄",
       href: true,
-      doc: "무적 LG!"
+      doc: "무적 LG!",
+      chapter: ["test1", "test2", "test3"]
     },
     {
       title: "5번줄",

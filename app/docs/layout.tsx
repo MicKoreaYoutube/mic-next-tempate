@@ -13,7 +13,7 @@ export default function DocsLayout({ children }: DocsLayoutProps) {
     <>
       <div className="relative flex flex-row">
         <DocsSidebar items={siteConfig.docsSidebarContent} />
-        <div className="m-12">{children}</div>
+        <div className="w-full">{children}</div>
       </div>
     </>
   )
