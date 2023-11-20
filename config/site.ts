@@ -151,7 +151,8 @@ const siteConfig = {
       content: [
         {
           title: "11번 내용",
-          href: "/11"
+          href: "/11",
+          shortcut: ""
         },
         {
           title: "12번 내용",
@@ -199,7 +200,8 @@ const siteConfig = {
     },
     {
       title: "4번줄",
-      href: "/4"
+      href: "/4",
+      shortcut: ""
     },
     {
       title: "5번줄",

@@ -77,7 +77,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                           </AccordionContent>
                         </AccordionItem>
                       ) : (
-                        <Link href={`${item.href}`} key={index}>
+                        <Link href={`/${item.href}`} key={index}>
                           <CommandItem className="m-1">
                             <span className="text-md">{item.title}</span>
                             <CommandShortcut>{item.shortcut}</CommandShortcut>
