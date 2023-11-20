@@ -85,7 +85,7 @@ export function SiteHeader() {
         <div className="flex flex-1 items-center justify-end space-x-4">
           <CommandDialog open={open} onOpenChange={setOpen}>
             <CommandInput placeholder="Search anything" />
-            <ScrollArea className="h-[50vh]">
+            <ScrollArea className="h-[60vh]">
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>
                 {/*<CommandGroup heading="dashboard" />
