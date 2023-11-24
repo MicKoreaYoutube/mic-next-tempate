@@ -19,6 +19,7 @@ import {
   Calculator,
   Calendar,
   Smile,
+  Menu
 } from "lucide-react"
 
 import Link from "next/link"
@@ -57,8 +58,16 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command"
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { ScrollArea } from "@/components/ui/scroll-area"
 import { MainNav } from "@/components/main-nav"
-import { ScrollArea } from "./ui/scroll-area"
 
 export function SiteHeader() {
 
@@ -82,7 +91,7 @@ export function SiteHeader() {
     <header className="bg-accent sticky top-0 z-40 w-full border-b font-RixInooAriDuriR">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
-        <div className="flex flex-1 items-center justify-end space-x-4">
+        <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">
           <CommandDialog open={open} onOpenChange={setOpen}>
             <CommandInput placeholder="Search anything" />
             <ScrollArea className="h-[60vh]">
@@ -288,6 +297,24 @@ export function SiteHeader() {
               <Link href="/login">Login</Link>
             </Button>
           )}
+        </div>
+        <div className="flex flex-1 items-center justify-end md:hidden">
+          <Sheet>
+            <SheetTrigger>
+              <Button variant="ghost" size="icon">
+                <Menu />
+              </Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Are you sure absolutely sure?</SheetTitle>
+                <SheetDescription>
+                  This action cannot be undone. This will permanently delete your account
+                  and remove your data from our servers.
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

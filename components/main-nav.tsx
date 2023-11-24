@@ -31,7 +31,8 @@ export function MainNav({ items }: MainNavProps) {
         <Icons.logo className="h-6 w-6" />
         <span className="inline-block font-bold">{siteConfig.name}</span>
       </Link>
-      <NavigationMenu>
+      <div className="hidden md:flex">
+        <NavigationMenu>
         <NavigationMenuList>
           {items?.length ? (
             <>
@@ -85,7 +86,8 @@ export function MainNav({ items }: MainNavProps) {
             </>
           ) : null}
         </NavigationMenuList>
-      </NavigationMenu>
+        </NavigationMenu>
+      </div>
     </div>
   )
 }
