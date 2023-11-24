@@ -300,7 +300,7 @@ export function SiteHeader() {
         </div>
         <div className="flex flex-1 items-center justify-end md:hidden">
           <Sheet>
-            <SheetTrigger>
+            <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu />
               </Button>
