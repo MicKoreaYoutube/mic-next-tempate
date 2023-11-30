@@ -19,7 +19,8 @@ import {
   Calculator,
   Calendar,
   Smile,
-  Menu
+  Menu,
+  Search
 } from "lucide-react"
 
 import Link from "next/link"
@@ -67,13 +68,20 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Input } from "@/components/ui/input"
 import { MainNav } from "@/components/main-nav"
+
+import fuseAPI from "fuse.js"
 
 export function SiteHeader() {
 
   const [isLogin, changeLoginState] = useState(true)
 
   const [open, setOpen] = useState(false)
+
+  let result
+  let arrayResult: string[] = []
+  const [sortedResult, setSortedResult] = useState(["test"])
 
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -87,13 +95,26 @@ export function SiteHeader() {
     return () => document.removeEventListener("keydown", down)
   }, [])
 
+  const data = ["Calendar", "Search Emoji", "Calculator", "Profile", "Billing", "Settings"]
+  const fuse = new fuseAPI(data)
+
   return (
     <header className="bg-accent sticky top-0 z-40 w-full border-b font-RixInooAriDuriR">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
         <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">
           <CommandDialog open={open} onOpenChange={setOpen}>
-            <CommandInput placeholder="Search anything" />
+            <div className="flex items-center border-b px-3">
+              <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
+              <Input placeholder="Search anything" className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
+                onChange={(e)=>{
+                  result = fuse.search(e.target.value)
+                  result.forEach((item)=>{
+                    arrayResult.push(item.item.toString())
+                  })
+                  setSortedResult(arrayResult)
+                }} />
+            </div>
             <ScrollArea className="h-[60vh]">
               <CommandList>
                 <CommandEmpty>No results found.</CommandEmpty>

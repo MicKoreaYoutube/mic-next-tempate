@@ -17,8 +17,7 @@ export default function Dashboard00() {
   return (
     <>
       <Input placeholder="search anything" onChange={(e)=>{
-        queryChanger(e.target.value)
-        resultChanger(fuse.search(query))
+        resultChanger(fuse.search(e.target.value))
       }}/>
       {query}
       <br />
