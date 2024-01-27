@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { dashboardSidebarItem, docsSidebarItem } from "@/types/sidebar"
 
-import * as Radix from "@radix-ui/react-icons"
+import { SearchDialog } from "@/components/search"
 
 import {
   Accordion,
@@ -26,7 +26,7 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 
-import parse from "html-react-parser"
+import { Link as TargetLink } from 'react-scroll';
 
 interface dashboardSidebarInterface {
   items?: dashboardSidebarItem[]
@@ -138,9 +138,13 @@ export function ChapterSidebar({ items }: chapterSidebarInterface) {
           {items?.length ? (
             items.map(
               (item, index) => (
-                <Link key={index} href={`#chapter-${item}`} className={`${selectedChapter == item ? "font-bold" : null} font-SUITE-Regular`} onClick={()=>{
-                  selectChapter(item)
-                }}>{item}</Link>
+                <TargetLink 
+                  key={index} 
+                  to={`chapter-${item}`} 
+                  className={`${selectedChapter == item ? "font-bold" : null} font-SUITE-Regular`} onClick={()=>{selectChapter(item)}}
+                  smooth={true}
+                  duration={500}
+                >{item}</TargetLink>
               )
             )
           ) : null}

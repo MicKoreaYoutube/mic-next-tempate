@@ -72,6 +72,7 @@ import { Input } from "@/components/ui/input"
 import { MainNav } from "@/components/main-nav"
 
 import fuseAPI from "fuse.js"
+import { SearchDialog } from "./search"
 
 export function SiteHeader() {
 
@@ -103,123 +104,7 @@ export function SiteHeader() {
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
         <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">
-          <CommandDialog open={open} onOpenChange={setOpen}>
-            <div className="flex items-center border-b px-3">
-              <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
-              <Input placeholder="Search anything" className="flex h-11 w-full rounded-md bg-transparent py-3 text-sm outline-none border-0 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50"
-                onChange={(e)=>{
-                  result = fuse.search(e.target.value)
-                  result.forEach((item)=>{
-                    arrayResult.push(item.item.toString())
-                  })
-                  setSortedResult(arrayResult)
-                }} />
-            </div>
-            <ScrollArea className="h-[60vh]">
-              <CommandList>
-                <CommandEmpty>No results found.</CommandEmpty>
-                {/*<CommandGroup heading="dashboard" />
-                {siteConfig.dashboardSidebarContent?.length ? (
-                  siteConfig.dashboardSidebarContent?.map(
-                    (item, index) => (
-                      <>
-                        {item.content?.length ? (
-                          <CommandGroup key={index} heading={item.title}>
-                            {item.content?.map(
-                              (contentItem, contentIndex) => (
-                                <CommandItem key={contentIndex}>
-                                  <Link href={contentItem.href}>{contentItem.title}</Link>
-                                  <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
-                                </CommandItem>
-                              )
-                            )}
-                          </CommandGroup>
-                        ) : (
-                          <CommandGroup heading={item.title}>
-                            <CommandItem>
-                              <Link href={`/${item.href}`}>{item.title}</Link>
-                              <CommandShortcut>{item.shortcut}</CommandShortcut>
-                            </CommandItem>
-                          </CommandGroup>
-                        )}
-                      </>
-                    )
-                  )
-                ) : null}
-                <CommandSeparator />
-                <CommandGroup heading="Docs" />
-                {siteConfig.docsSidebarContent?.length ? (
-                  siteConfig.docsSidebarContent?.map(
-                    (item, index) => (
-                      <>
-                        {item.content?.length ? (
-                          <CommandGroup key={index} heading={item.title}>
-                            {item.href ? (
-                              <CommandItem>
-                                <Link href={`/docs/${item.title}`}>{item.title}</Link>
-                              </CommandItem>
-                            ) : null}
-                            {item.content?.map(
-                              (contentItem, contentIndex) => (
-                                <CommandItem key={contentIndex}>
-                                  <Link href={`/docs/${item.title}/${contentItem.title}`}>{contentItem.title}</Link>
-                                </CommandItem>
-                              )
-                            )}
-                          </CommandGroup>
-                        ) : (
-                          <CommandGroup heading={item.title}>
-                            <CommandItem>
-                              <Link href={`/docs/${item.title}`}>{item.title}</Link>
-                            </CommandItem>
-                          </CommandGroup>
-                        )}
-                      </>
-                    )
-                  )
-                ) : null}*/}
-                <CommandGroup heading="Suggestions">
-                  <CommandItem>
-                    <Calendar className="mr-2 h-4 w-4" />
-                    <span>Calendar</span>
-                  </CommandItem>
-                  <CommandItem>
-                    <Smile className="mr-2 h-4 w-4" />
-                    <span>Search Emoji</span>
-                  </CommandItem>
-                  <CommandItem>
-                    <Calculator className="mr-2 h-4 w-4" />
-                    <span>Calculator</span>
-                  </CommandItem>
-                </CommandGroup>
-                <CommandSeparator />
-                <CommandGroup heading="Settings">
-                  <CommandItem>
-                    <User className="mr-2 h-4 w-4" />
-                    <span>Profile</span>
-                    <CommandShortcut>⌘P</CommandShortcut>
-                  </CommandItem>
-                  <CommandItem>
-                    <CreditCard className="mr-2 h-4 w-4" />
-                    <span>Billing</span>
-                    <CommandShortcut>⌘B</CommandShortcut>
-                  </CommandItem>
-                  <CommandItem>
-                    <Settings className="mr-2 h-4 w-4" />
-                    <span>Settings</span>
-                    <CommandShortcut>⌘S</CommandShortcut>
-                  </CommandItem>
-                </CommandGroup>
-              </CommandList>
-            </ScrollArea>
-          </CommandDialog>
-          <Button className="w-52 bg-transparent shadow-sm flex justify-between"
-            variant="outline"
-            onClick={() => {
-              setOpen(true)
-            }}>
-            <span>Search anything</span><span className="border border-input rounded-lg bg-background px-2 py-1">⌘K</span>
-          </Button>
+          <SearchDialog />
           {isLogin ? (
             <DropdownMenu>
               <DropdownMenuTrigger asChild>

@@ -271,7 +271,7 @@ const siteConfig = {
     {
       title: "4번줄",
       href: true,
-      doc: "<div className='h-full bg-red-500 text-2xl font-KBO-Dia-Gothic_bold' id='#chapter-test1'>무적 LG!</div>",
+      doc: "<div className='h-full bg-red-500 text-2xl font-KBO-Dia-Gothic_bold' id='chapter-test1'>무적 LG!</div>",
       chapter: ["test1", "test2", "test3"]
     },
     {
