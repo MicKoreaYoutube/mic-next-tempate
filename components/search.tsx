@@ -99,14 +99,11 @@ export function SearchDialog() {
 
   let result = fuse.search(query)
 
-  // const topCommandGroupRefs = Array.from({ length: data.length }, () => useRef(null))
-  // const secCommandGroupRefs: RefObject<HTMLDivElement>[] = Array.from(
-  //   { length: Math.max(...data.map(section => section.content.length)) },
-  //   () => useRef(null)
-  // );
-
-  const topCommandGroupRefs = useRef([])
-  const secCommandGroupRefs = useRef([])
+  const topCommandGroupRefs = Array.from({ length: data.length }, () => useRef(null))
+  const secCommandGroupRefs: RefObject<HTMLDivElement>[] = Array.from(
+    { length: Math.max(...data.map(section => section.content.length)) },
+    () => useRef(null)
+  );
 
   return (
     <>
@@ -196,16 +193,16 @@ export function SearchDialog() {
                   <CommandShortcut>⌘S</CommandShortcut>
                 </CommandItem>
               </CommandGroup>
-            </CommandGroup> 
+            </CommandGroup> */}
             {
               data.length ? (
                 data.map(
                   (item, index) => (
-                    <CommandGroup heading={item.heading} key={index}>
+                    <CommandGroup heading={item.heading} key={index} ref={topCommandGroupRefs[index]}>
                       {item.content.length ? (
                         item.content.map(
                           (contentItem, contentIndex) => (
-                            <CommandGroup heading={contentItem.heading} key={contentIndex}>
+                            <CommandGroup heading={contentItem.heading} key={contentIndex} ref={secCommandGroupRefs[contentIndex]} className={undefined}>
                               {contentItem.content.length ? (
                                 contentItem.content.map(
                                   (contentItemIncontentItem, contentItemIncontentIndex) => (
@@ -224,28 +221,7 @@ export function SearchDialog() {
                     </CommandGroup>
                   ))
               ) : null
-            } */}
-            {query ? null : (
-            <CommandGroup heading="recent">
-                <>
-                  <CommandItem>
-                    <User className="mr-2 h-4 w-4" />
-                    <span>Profile</span>
-                    <CommandShortcut>⌘P</CommandShortcut>
-                  </CommandItem>
-                  <CommandItem>
-                    <CreditCard className="mr-2 h-4 w-4" />
-                    <span>Billing</span>
-                    <CommandShortcut>⌘B</CommandShortcut>
-                  </CommandItem>
-                  <CommandItem>
-                    <Settings className="mr-2 h-4 w-4" />
-                    <span>Settings</span>
-                    <CommandShortcut>⌘S</CommandShortcut>
-                  </CommandItem>
-                </>
-            </CommandGroup>
-            )}
+            }
           </CommandList>
         </ScrollArea>
       </CommandDialog>

@@ -150,6 +150,7 @@ const siteConfig = {
       title: "1번줄",
       content: [
         {
+          icon: "smile",
           title: "11번 내용",
           href: "/11",
           shortcut: ""

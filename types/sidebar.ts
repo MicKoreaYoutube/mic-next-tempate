@@ -1,4 +1,5 @@
 export interface dashboardSidebarItem {
+    icon?: string
     title: string
     href?: string
     shortcut?: string

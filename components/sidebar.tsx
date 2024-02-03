@@ -5,7 +5,6 @@ import Link from "next/link"
 import { dashboardSidebarItem, docsSidebarItem } from "@/types/sidebar"
 
 import { SearchDialog } from "@/components/search"
-
 import {
   Accordion,
   AccordionContent,
@@ -28,6 +27,10 @@ import { useState } from "react"
 
 import { Link as TargetLink } from 'react-scroll';
 
+import parse from "html-react-parser"
+
+import { Icons } from "./icons"
+
 interface dashboardSidebarInterface {
   items?: dashboardSidebarItem[]
 }
@@ -46,7 +49,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
 
   return (
     <>
-      <Command className="border-r rounded-none max-w-[15rem] h-[80vh]">
+      <Command className="border-r rounded-none h-[80vh]">
         <CommandList>
           <Accordion type="multiple" className="w-full font-TheJamsil5Bold">
             {items?.length ? (
@@ -65,8 +68,8 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                 {item.content?.map(
                                   (contentItem, contentIndex) => (
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
-                                      <CommandItem className={`${index == 0 && contentIndex == 0 && pathName == "/dashboard/00" ? "bg-accent text-accent-foreground" : null}`}>
-                                        <span className="text-md">{contentItem.title}</span>
+                                      <CommandItem>
+                                        <span className="text-md">{parse(contentItem.title)}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
                                       </CommandItem>
                                     </Link>

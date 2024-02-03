@@ -33,14 +33,3 @@ export const Icons = {
     </svg>
   ),
 }
-
-export function IconComponent({ type, iconName }: any) {
-  switch (type) {
-    case 'radix':
-      return (
-        <Radix.FaceIcon />
-      )
-    default:
-      return null
-  }
-}
