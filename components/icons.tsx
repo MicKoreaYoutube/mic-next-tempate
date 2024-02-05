@@ -3,13 +3,38 @@ import {
   Moon,
   SunMedium,
   Twitter,
-  Instagram,
-  type Icon as LucideIcon,
+  Instagram
 } from "lucide-react"
 
-import * as Radix from "@radix-ui/react-icons"
+// import { icons } from 'lucide-react';
 
-export type Icon = LucideIcon
+// const Icon = ({ name, color, size }) => {
+//   const LucideIcon = icons[name];
+
+//   return <LucideIcon color={color} size={size} />;
+// };
+
+// export default Icon;
+
+import React, { lazy, Suspense } from 'react';
+import { icons } from "lucide-react";
+import dynamicIconImports from 'lucide-react/dynamicIconImports';
+
+const fallback = <div style={{ backgroundColor: 'transparent', width: 24, height: 24 }}/>
+
+interface IconProps extends Omit<LucideProps, 'ref'> {
+  name: keyof typeof dynamicIconImports;
+}
+
+export const Icon = ({ name, ...props }: IconProps) => {
+  const LucideIcon = lazy(dynamicIconImports[name]);
+
+  return (
+    <Suspense fallback={fallback}>
+      <LucideIcon {...props} />
+    </Suspense>
+  );
+}
 
 export const Icons = {
   sun: SunMedium,

@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { dashboardSidebarItem, docsSidebarItem } from "@/types/sidebar"
 
+import { Icon } from "@/components/icons"
 import { SearchDialog } from "@/components/search"
 import {
   Accordion,
@@ -25,11 +26,9 @@ import { ScrollArea } from "@/components/ui/scroll-area"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 
-import { Link as TargetLink } from 'react-scroll';
+import { Link as TargetLink } from 'react-scroll'
 
 import parse from "html-react-parser"
-
-import { Icons } from "./icons"
 
 interface dashboardSidebarInterface {
   items?: dashboardSidebarItem[]
@@ -69,6 +68,9 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                   (contentItem, contentIndex) => (
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                       <CommandItem>
+                                        {contentItem.icon ? (
+                                          <Icon name={contentItem.icon}/>
+                                        ) : null}
                                         <span className="text-md">{parse(contentItem.title)}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
                                       </CommandItem>
@@ -141,10 +143,10 @@ export function ChapterSidebar({ items }: chapterSidebarInterface) {
           {items?.length ? (
             items.map(
               (item, index) => (
-                <TargetLink 
-                  key={index} 
-                  to={`chapter-${item}`} 
-                  className={`${selectedChapter == item ? "font-bold" : null} font-SUITE-Regular`} onClick={()=>{selectChapter(item)}}
+                <TargetLink
+                  key={index}
+                  to={`chapter-${item}`}
+                  className={`${selectedChapter == item ? "font-bold" : null} font-SUITE-Regular`} onClick={() => { selectChapter(item) }}
                   smooth={true}
                   duration={500}
                 >{item}</TargetLink>

@@ -173,6 +173,7 @@ const siteConfig = {
           href: "/21"
         },
         {
+          icon: "badge-check",
           title: "22번 내용",
           href: "/22"
         },

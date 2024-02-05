@@ -1,10 +1,12 @@
+import dynamicIconImports from 'lucide-react/dynamicIconImports'
+
 export interface dashboardSidebarItem {
-    icon?: string
+    icon?: keyof typeof dynamicIconImports
     title: string
     href?: string
     shortcut?: string
     content?: Array<{
-        icon?: string
+        icon?: keyof typeof dynamicIconImports
         title: string
         href: string
         shortcut?: string

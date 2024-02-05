@@ -150,7 +150,7 @@ export function NavDropDown() {
             </DropdownMenuContent>
           </DropdownMenu >
         ) : (
-          <Button asChild className="hover:bg-slate-200 duration-[200ms]" variant="ghost" size="icon">
+          <Button asChild variant="ghost" size="icon">
             <Link href="/login"><LogIn /></Link>
           </Button>
         )

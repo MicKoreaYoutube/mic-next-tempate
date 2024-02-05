@@ -4,6 +4,7 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
+  transpilePackages: ['lucide-react']
 }
 
 export default nextConfig
