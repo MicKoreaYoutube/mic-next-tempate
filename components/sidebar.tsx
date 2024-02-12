@@ -4,7 +4,6 @@ import Link from "next/link"
 
 import { dashboardSidebarItem, docsSidebarItem } from "@/types/sidebar"
 
-import { Icon } from "@/components/icons"
 import { SearchDialog } from "@/components/search"
 import {
   Accordion,
@@ -30,6 +29,12 @@ import { Link as TargetLink } from 'react-scroll'
 
 import parse from "html-react-parser"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
 interface dashboardSidebarInterface {
   items?: dashboardSidebarItem[]
 }
@@ -45,6 +50,8 @@ interface chapterSidebarInterface {
 export function DashboardSidebar({ items }: dashboardSidebarInterface) {
 
   const pathName = usePathname()
+  
+  library.add(fas, far, fab)
 
   return (
     <>
@@ -69,7 +76,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                       <CommandItem>
                                         {contentItem.icon ? (
-                                          <Icon name={contentItem.icon}/>
+                                          null
                                         ) : null}
                                         <span className="text-md">{parse(contentItem.title)}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>

@@ -6,6 +6,12 @@ import {
   Instagram
 } from "lucide-react"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library, IconProp } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+
 // import { icons } from 'lucide-react';
 
 // const Icon = ({ name, color, size }) => {
@@ -16,25 +22,39 @@ import {
 
 // export default Icon;
 
-import React, { lazy, Suspense } from 'react';
-import { icons } from "lucide-react";
-import dynamicIconImports from 'lucide-react/dynamicIconImports';
+// import React, { lazy, Suspense } from 'react';
+// import { icons } from "lucide-react";
+// import dynamicIconImports from 'lucide-react/dynamicIconImports';
 
-const fallback = <div style={{ backgroundColor: 'transparent', width: 24, height: 24 }}/>
+// const fallback = <div style={{ backgroundColor: 'transparent', width: 24, height: 24 }}/>
 
-interface IconProps extends Omit<LucideProps, 'ref'> {
-  name: keyof typeof dynamicIconImports;
+// interface IconProps extends Omit<LucideProps, 'ref'> {
+//   name: keyof typeof dynamicIconImports;
+// }
+
+interface MyIconProps {
+  prefix: "fas" | "far" | "fab"
+  iconName: string
 }
 
-export const Icon = ({ name, ...props }: IconProps) => {
-  const LucideIcon = lazy(dynamicIconImports[name]);
+// export const Icon = ({ name, ...props }: IconProps) => {
+//   const LucideIcon = lazy(dynamicIconImports[name]);
 
-  return (
-    <Suspense fallback={fallback}>
-      <LucideIcon {...props} />
-    </Suspense>
-  );
-}
+//   return (
+//     <Suspense fallback={fallback}>
+//       <LucideIcon {...props} />
+//     </Suspense>
+//   );
+// }
+
+// export function MyFontAwesomeIcon({ icon }: IconProp) {
+  
+//   library.add(fas, far, fab)
+
+//   return (
+//     <FontAwesomeIcon icon={[prefix, iconName]} />
+//   )
+// }
 
 export const Icons = {
   sun: SunMedium,
