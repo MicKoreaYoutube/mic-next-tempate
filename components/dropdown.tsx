@@ -49,6 +49,8 @@ import {
   AvatarImage,
 } from "@/components/ui/avatar"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 export function NavDropDown() {
 
   const [isLogin, changeLoginState] = useState(false)
@@ -151,7 +153,7 @@ export function NavDropDown() {
           </DropdownMenu >
         ) : (
           <Button asChild variant="ghost" size="icon">
-            <Link href="/login"><LogIn /></Link>
+            <Link href="/login"><FontAwesomeIcon icon={['fas', 'house']} /></Link>
           </Button>
         )
       }
