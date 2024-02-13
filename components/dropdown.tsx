@@ -50,16 +50,11 @@ import {
 } from "@/components/ui/avatar"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 export function NavDropDown() {
 
   const [isLogin, changeLoginState] = useState(false)
-
-  library.add(fas, far, fab)
 
   return (
     <>
@@ -159,7 +154,7 @@ export function NavDropDown() {
           </DropdownMenu >
         ) : (
           <Button asChild variant="ghost" size="icon">
-            <Link href="/login"><FontAwesomeIcon icon={['fas', 'house']} /></Link>
+            <Link href="/login"><FontAwesomeIcon icon={faRightToBracket} size="xl"/></Link>
           </Button>
         )
       }

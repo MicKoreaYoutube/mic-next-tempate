@@ -76,7 +76,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                       <CommandItem>
                                         {contentItem.icon ? (
-                                          null
+                                          <FontAwesomeIcon icon={contentItem.icon} size="lg"/>
                                         ) : null}
                                         <span className="text-md">{parse(contentItem.title)}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>

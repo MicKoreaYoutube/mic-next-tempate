@@ -1,12 +1,13 @@
 import dynamicIconImports from 'lucide-react/dynamicIconImports'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 export interface dashboardSidebarItem {
-    icon?: keyof typeof dynamicIconImports
+    icon?: IconProp
     title: string
     href?: string
     shortcut?: string
     content?: Array<{
-        icon?: keyof typeof dynamicIconImports
+        icon?: IconProp
         title: string
         href: string
         shortcut?: string
