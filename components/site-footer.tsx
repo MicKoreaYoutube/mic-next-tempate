@@ -16,7 +16,9 @@ import {
 import { Icons } from "@/components/icons"
 import { ThemeToggle } from "@/components/theme-toggle"
 
-import { ChevronDown } from "lucide-react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons"
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { useState } from "react"
 import { useInView } from "react-intersection-observer"
@@ -72,7 +74,7 @@ export function SiteFooter() {
           <nav className="flex items-center space-x-1">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">패밀리 서비스&nbsp;<ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
+                <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
                 <DropdownMenuGroup>
@@ -101,7 +103,7 @@ export function SiteFooter() {
                   variant: "ghost",
                 })}
               >
-                <Icons.gitHub className="h-5 w-5" />
+                <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>
@@ -116,7 +118,7 @@ export function SiteFooter() {
                   variant: "ghost",
                 })}
               >
-                <Icons.instagram className="h-5 w-5" />
+                <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </div>
             </Link>

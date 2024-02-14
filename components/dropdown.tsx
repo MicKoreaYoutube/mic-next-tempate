@@ -154,7 +154,7 @@ export function NavDropDown() {
           </DropdownMenu >
         ) : (
           <Button asChild variant="ghost" size="icon">
-            <Link href="/login"><FontAwesomeIcon icon={faRightToBracket} size="xl"/></Link>
+            <Link href="/auth/login"><FontAwesomeIcon icon={faRightToBracket} className="h-5 w-5" /></Link>
           </Button>
         )
       }
