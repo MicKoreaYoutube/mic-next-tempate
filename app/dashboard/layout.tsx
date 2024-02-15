@@ -1,6 +1,6 @@
 'use client'
 
-import { siteConfig } from "@/config/site"
+import { dashboardSidebarContent } from "@/config/site"
 
 import { DashboardSidebar } from "@/components/sidebar"
 import {
@@ -21,7 +21,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
           direction="horizontal"
         >
           <ResizablePanel defaultSize={13} maxSize={13} minSize={4}>
-            <DashboardSidebar items={siteConfig.dashboardSidebarContent} />
+            <DashboardSidebar items={dashboardSidebarContent} />
           </ResizablePanel>
           <ResizableHandle withHandle/>
           <ResizablePanel>

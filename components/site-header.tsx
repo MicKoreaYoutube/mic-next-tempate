@@ -98,7 +98,7 @@ export function SiteHeader() {
   const fuse = new fuseAPI(data)
 
   return (
-    <header className="bg-accent sticky top-0 z-40 w-full border-b font-RixInooAriDuriR">
+    <header className="bg-accent/50 sticky top-0 z-40 w-full font-RixInooAriDuriR backdrop-blur-sm">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
         <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">

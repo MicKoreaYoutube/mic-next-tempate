@@ -31,7 +31,7 @@ export function SiteFooter() {
   })
 
   return (
-    <footer className="bg-accent z-40 w-full border-t font-RixInooAriDuriR">
+    <footer className="bg-accent/50 w-full border-t font-RixInooAriDuriR">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -74,7 +74,7 @@ export function SiteFooter() {
           <nav className="flex items-center space-x-1">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
+                <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 h-3 w-3 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
                 <DropdownMenuGroup>

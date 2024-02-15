@@ -145,84 +145,6 @@ const siteConfig = {
     micInstagram: "https://instagram.com/leejunsibal",
     micGithub: "https://github.com/MicKoreaYoutube/mic-next-template"
   },
-  dashboardSidebarContent: [
-    {
-      title: "1번줄",
-      content: [
-        {
-          icon: ["fas", "house"],
-          title: "11번 내용",
-          href: "/11",
-          shortcut: ""
-        },
-        {
-          title: "12번 내용",
-          href: "/12"
-        },
-        {
-          title: "13번 내용",
-          href: "/13"
-        }
-      ]
-    },
-    {
-      title: "2번줄",
-      content: [
-        {
-          title: "21번 내용",
-          href: "/21"
-        },
-        {
-          icon: ["far", "circle-check"],
-          title: "22번 내용",
-          href: "/22"
-        },
-        {
-          title: "23번 내용",
-          href: "/23"
-        }
-      ]
-    },
-    {
-      title: "3번줄",
-      content: [
-        {
-          title: "31번 내용",
-          href: "/31"
-        },
-        {
-          title: "32번 내용",
-          href: "/32"
-        },
-        {
-          title: "33번 내용",
-          href: "/33"
-        }
-      ]
-    },
-    {
-      title: "4번줄",
-      href: "/4",
-      shortcut: ""
-    },
-    {
-      title: "5번줄",
-      content: [
-        {
-          title: "51번 내용",
-          href: "/51"
-        },
-        {
-          title: "52번 내용",
-          href: "/52"
-        },
-        {
-          title: "53번 내용",
-          href: "/53"
-        }
-      ]
-    },
-  ],
   docsSidebarContent: [
     {
       title: "1번줄",
@@ -292,10 +214,92 @@ const siteConfig = {
     },
   ],
 }
+
 if (siteConfig.mainNav[0].mainLink) {
   siteConfig.mainNav[0].mainLink.title = siteConfig.name
   siteConfig.mainNav[0].mainLink.description = siteConfig.description
 }
+
+import { dashboardSidebarItem, docsSidebarItem } from "@/types/sidebar"
+
+export const dashboardSidebarContent = [
+  {
+    title: "1번줄",
+    content: [
+      {
+        icon: ["fas", "house"],
+        title: "11번 내용",
+        href: "/11",
+        shortcut: ""
+      },
+      {
+        title: "12번 내용",
+        href: "/12"
+      },
+      {
+        title: "13번 내용",
+        href: "/13"
+      }
+    ]
+  },
+  {
+    title: "2번줄",
+    content: [
+      {
+        title: "21번 내용",
+        href: "/21"
+      },
+      {
+        icon: ["far", "circle-check"],
+        title: "22번 내용",
+        href: "/22"
+      },
+      {
+        title: "23번 내용",
+        href: "/23"
+      }
+    ]
+  },
+  {
+    title: "3번줄",
+    content: [
+      {
+        title: "31번 내용",
+        href: "/31"
+      },
+      {
+        title: "32번 내용",
+        href: "/32"
+      },
+      {
+        title: "33번 내용",
+        href: "/33"
+      }
+    ]
+  },
+  {
+    title: "4번줄",
+    href: "/4",
+    shortcut: ""
+  },
+  {
+    title: "5번줄",
+    content: [
+      {
+        title: "51번 내용",
+        href: "/51"
+      },
+      {
+        title: "52번 내용",
+        href: "/52"
+      },
+      {
+        title: "53번 내용",
+        href: "/53"
+      }
+    ]
+  },
+] as dashboardSidebarItem[]
 
 export { siteConfig }
 
