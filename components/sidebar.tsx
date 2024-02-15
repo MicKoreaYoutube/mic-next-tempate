@@ -4,7 +4,7 @@ import Link from "next/link"
 
 import { dashboardSidebarItem, docsSidebarItem } from "@/types/sidebar"
 
-import { SearchDialog } from "@/components/search"
+// import { SearchDialog } from "@/components/search"
 import {
   Accordion,
   AccordionContent,

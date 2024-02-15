@@ -10,7 +10,7 @@ import { useEffect } from "react"
 
 import { ChapterSidebar } from "@/components/sidebar"
 
-export default function DocsSubjectPage({ params }: { params: { subject: string, title: string } }) {
+export default function DocsTitlePage({ params }: { params: { subject: string, title: string } }) {
 
   const foundSubject = siteConfig.docsSidebarContent.find(obj => obj.title == decodeURI(params.subject))
   const foundObject: { title: string; doc?: string; chapter?: string[] } | undefined = foundSubject?.content?.find(obj => obj.title == decodeURI(params.title))

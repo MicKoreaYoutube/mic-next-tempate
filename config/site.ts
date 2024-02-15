@@ -222,7 +222,7 @@ if (siteConfig.mainNav[0].mainLink) {
 
 import { dashboardSidebarItem } from "@/types/sidebar"
 
-export const dashboardSidebarContent = [
+export const dashboardSidebarContent: dashboardSidebarItem[] = [
   {
     title: "1번줄",
     content: [
@@ -299,7 +299,7 @@ export const dashboardSidebarContent = [
       }
     ]
   },
-] as dashboardSidebarItem[]
+]
 
 export { siteConfig }
 
