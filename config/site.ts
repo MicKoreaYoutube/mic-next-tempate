@@ -220,7 +220,7 @@ if (siteConfig.mainNav[0].mainLink) {
   siteConfig.mainNav[0].mainLink.description = siteConfig.description
 }
 
-import { dashboardSidebarItem, docsSidebarItem } from "@/types/sidebar"
+import { dashboardSidebarItem } from "@/types/sidebar"
 
 export const dashboardSidebarContent = [
   {
