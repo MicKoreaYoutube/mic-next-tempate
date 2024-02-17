@@ -23,7 +23,7 @@ export default function Join() {
           </h1>
         </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
-        <div>
+          <div>
             <Label htmlFor="id" className="p-1">아이디</Label>
             <Input placeholder="아이디를 입력하세요." />
           </div>
@@ -41,7 +41,19 @@ export default function Join() {
           </div>
           <Button>로그인</Button>
         </div>
-        <hr />
+        <div className="relative">
+          <div className="absolute inset-0 flex items-center">
+            <span className="w-full border-t" />
+          </div>
+          <div className="relative flex justify-center font-SUITE-Regular">
+            <span className="bg-background px-2 text-muted-foreground">
+              또는
+            </span>
+          </div>
+        </div>
+        <div>
+          <Button>로그인</Button>
+        </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
           <span className="px-8 text-center text-sm text-muted-foreground">계정이 없나요? <Link href="/auth/join" className="text-blue-500 hover:text-blue-700">회원가입→</Link></span>
           <p className="px-8 text-center text-sm text-muted-foreground">

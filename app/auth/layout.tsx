@@ -13,7 +13,7 @@ interface AuthLayoutProps {
 export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <>
-      <div className="relative h-[94vh] flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
+      <div className="h-screen flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         <div className="relative hidden h-full flex-col bg-muted p-10 text-background dark:border-r lg:flex">
           <div className="absolute inset-0 bg-primary" />
           <div className="relative z-20 flex items-center text-lg font-medium font-KBO-Dia-Gothic_bold">

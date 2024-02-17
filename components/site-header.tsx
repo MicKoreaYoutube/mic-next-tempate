@@ -72,7 +72,6 @@ import { Input } from "@/components/ui/input"
 import { MainNav } from "@/components/main-nav"
 import { NavDropDown } from "@/components/dropdown"
 import fuseAPI from "fuse.js"
-import { SearchDialog } from "./search"
 
 export function SiteHeader() {
 

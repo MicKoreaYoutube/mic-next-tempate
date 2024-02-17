@@ -31,7 +31,7 @@ export function SiteFooter() {
   })
 
   return (
-    <footer className="bg-accent/50 w-full border-t font-RixInooAriDuriR">
+    <footer className="bg-accent/50 z-40 inset-x-0 bottom-0 w-full border-t font-RixInooAriDuriR">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">

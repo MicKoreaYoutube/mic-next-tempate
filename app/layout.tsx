@@ -51,9 +51,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex min-h-screen flex-col">
+            <div className="relative flex flex-col">
               <SiteHeader />
-              <div className="flex-1">{children}</div>
+              {children}
               <SiteFooter />
             </div>
             <TailwindIndicator />
