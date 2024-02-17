@@ -1,23 +1,44 @@
+'use client'
+
 import Link from "next/link"
+import { useState } from "react"
 
 import { Icons } from "@/components/icons"
 
 import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 export default function Join() {
+
+  const [joinState, stateChanger] = useState()
+
   return (
     <>
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight font-KBO-Dia-Gothic_bold">
-            로그인
+            회원 가입
           </h1>
         </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
-          <Input placeholder="아이디를 입력하세요." />
-          <Input placeholder="비밀번호를 입력하세요." type="password" />
+        <div>
+            <Label htmlFor="id" className="p-1">아이디</Label>
+            <Input placeholder="아이디를 입력하세요." />
+          </div>
+          <div>
+            <Label htmlFor="pwd" className="p-1">비밀번호</Label>
+            <Input placeholder="비밀번호를 입력하세요." type="password" />
+          </div>
+          <div>
+            <Label htmlFor="pwdCheck" className="p-1">비밀번호 확인</Label>
+            <Input placeholder="비밀번호를 다 입력하세요." type="password" />
+          </div>
+          <div>
+            <Label htmlFor="email" className="p-1">이메일</Label>
+            <Input placeholder="이메일를 다 입력하세요." type="text" />
+          </div>
           <Button>로그인</Button>
         </div>
         <hr />

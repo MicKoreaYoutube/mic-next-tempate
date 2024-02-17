@@ -1,3 +1,5 @@
+'use client'
+
 import Link from "next/link"
 
 import { Icons } from "@/components/icons"
@@ -5,6 +7,7 @@ import { Icons } from "@/components/icons"
 import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Label } from "@/components/ui/label"
 
 export default function Login() {
   return (
@@ -16,8 +19,14 @@ export default function Login() {
           </h1>
         </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
-          <Input placeholder="아이디를 입력하세요." />
-          <Input placeholder="비밀번호를 입력하세요." type="password" />
+          <div>
+            <Label htmlFor="id" className="p-1">아이디</Label>
+            <Input placeholder="아이디를 입력하세요." />
+          </div>
+          <div>
+            <Label htmlFor="pwd" className="p-1">비밀번호</Label>
+            <Input placeholder="비밀번호를 입력하세요." type="password" />
+          </div>
           <Button>로그인</Button>
         </div>
         <hr />
