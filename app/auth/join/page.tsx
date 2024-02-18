@@ -3,43 +3,92 @@
 import Link from "next/link"
 import { useState } from "react"
 
-import { Icons } from "@/components/icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCheck } from "@fortawesome/free-solid-svg-icons"
+import { faGoogle, faGithub, faApple } from "@fortawesome/free-brands-svg-icons"
 
 import { siteConfig } from "@/config/site"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { Progress } from "@/components/ui/progress"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 export default function Join() {
 
-  const [joinState, stateChanger] = useState()
+  const [joinState, stateChanger] = useState("1")
+
+  const buttonText = ["다음→", "다음→", "가입 완료"]
 
   return (
     <>
       <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col space-y-2 text-center">
           <h1 className="text-2xl font-semibold tracking-tight font-KBO-Dia-Gothic_bold">
-            회원 가입
+            회원 가입 - {joinState}
           </h1>
         </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
+          <Progress value={100 * ((joinState - 1) / 2)} />
           <div>
-            <Label htmlFor="id" className="p-1">아이디</Label>
-            <Input placeholder="아이디를 입력하세요." />
+            <Tabs defaultValue={joinState}>
+              <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="1">1</TabsTrigger>
+                <TabsTrigger value="2">2</TabsTrigger>
+                <TabsTrigger value="3">3</TabsTrigger>
+              </TabsList>
+              <TabsContent value="1">
+                <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
+                  <div>
+                    <Label htmlFor="id" className="p-1">아이디</Label>
+                    <Input placeholder="아이디를 입력하세요." />
+                  </div>
+                  <div>
+                    <Label htmlFor="pwd" className="p-1">비밀번호</Label>
+                    <Input placeholder="비밀번호를 입력하세요." type="password" />
+                  </div>
+                  <div>
+                    <Label htmlFor="pwdCheck" className="p-1">비밀번호 확인</Label>
+                    <Input placeholder="비밀번호를 다 입력하세요." type="password" />
+                  </div>
+                </div>
+              </TabsContent>
+              <TabsContent value="2">
+                <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
+                  <div className="flex flex-col justify-center space-y-3">
+                    <div className="flex w-full max-w-sm items-center space-x-2">
+                      <Input type="email" placeholder="이메일을 입력하세요." className="w-64" />
+                      <Button type="submit">코드 받기</Button>
+                    </div>
+                    <Input placeholder="코드를 입력하세요." type="password" />
+                  </div>
+                </div>
+              </TabsContent>
+              <TabsContent value="3">
+                <div className="font-SUITE-Regular flex flex-col justify-center space-y-4">
+                <FontAwesomeIcon icon={faCheck} className="text-7xl"/>
+                <h1 className="font-SUITE-Regular text-center text-3xl">축하합니다!<br />계정 생성에 성공하셨습니다!</h1>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
-          <div>
-            <Label htmlFor="pwd" className="p-1">비밀번호</Label>
-            <Input placeholder="비밀번호를 입력하세요." type="password" />
-          </div>
-          <div>
-            <Label htmlFor="pwdCheck" className="p-1">비밀번호 확인</Label>
-            <Input placeholder="비밀번호를 다 입력하세요." type="password" />
-          </div>
-          <div>
-            <Label htmlFor="email" className="p-1">이메일</Label>
-            <Input placeholder="이메일를 다 입력하세요." type="text" />
-          </div>
-          <Button>로그인</Button>
+          {joinState == 3 ? null : null}
+          <Button onClick={(e) => {
+            stateChanger(joinState + 1)
+          }}>{joinState == 3 ? "가입 완료!" : `다음→ ${"("}${joinState}${"/ 3)"}`}</Button>
         </div>
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
@@ -51,11 +100,14 @@ export default function Join() {
             </span>
           </div>
         </div>
-        <div>
-          <Button>로그인</Button>
+        <div className="flex justify-between">
+          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faGoogle} className="font-bold text-lg" /></Button>
+          <Button variant="ghost" size="icon"><span className="font-bold text-xl">N</span></Button>
+          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faGithub} className="font-bold text-lg" /></Button>
+          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faApple} className="font-bold text-lg" /></Button>
         </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
-          <span className="px-8 text-center text-sm text-muted-foreground">계정이 없나요? <Link href="/auth/join" className="text-blue-500 hover:text-blue-700">회원가입→</Link></span>
+          <span className="px-8 text-center text-sm text-muted-foreground">계정이 이미 있나요? <Link href="/auth/login" className="text-blue-500 hover:text-blue-700">로그인→</Link></span>
           <p className="px-8 text-center text-sm text-muted-foreground">
             로그인 버튼을 누르실 경우, 당신은 {" "}
             <Link
