@@ -32,9 +32,7 @@ import MultiRef from 'react-multi-ref'
 export default function Join() {
 
   const [joinState, stateChanger] = useState(1)
-  const [tabRefs] = useState(() => new MultiRef())
-
-  const buttonText = ["다음→", "다음→", "가입 완료"]
+  let [isTabVisible, changeTabVisiblity] = useState(["block", "hidden", "hidden"])
 
   return (
     <>
@@ -46,7 +44,7 @@ export default function Join() {
         </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
           <Progress value={100 * ((joinState - 1) / 2)} />
-          <div ref={tabRefs.ref(0)}>
+          <div className={isTabVisible[0]}>
             <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
               <div>
                 <Label htmlFor="id" className="p-1">아이디</Label>
@@ -62,7 +60,7 @@ export default function Join() {
               </div>
             </div>
           </div>
-          <div ref={tabRefs.ref(1)}>
+          <div className={isTabVisible[1]}>
             <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
               <div className="flex flex-col justify-center space-y-3">
                 <div className="flex w-full max-w-sm items-center space-x-2">
@@ -73,15 +71,19 @@ export default function Join() {
               </div>
             </div>
           </div>
-          <div ref={tabRefs.ref(2)}>
+          <div className={isTabVisible[2]}>
             <div className="font-SUITE-Regular flex flex-col justify-center space-y-4">
               <FontAwesomeIcon icon={faCheck} className="text-7xl" />
               <h1 className="font-SUITE-Regular text-center text-3xl">축하합니다!<br />계정 생성에 성공하셨습니다!</h1>
             </div>
           </div>
           {joinState == 3 ? null : null}
-          <Button onClick={(e) => {
+          <Button onClick={() => {
             stateChanger(joinState + 1)
+            isTabVisible[joinState - 1] = "hidden"
+            changeTabVisiblity([...isTabVisible])
+            isTabVisible[joinState] = "block"
+            changeTabVisiblity([...isTabVisible])
           }}>{joinState == 3 ? "가입 완료!" : `다음→ ${"("}${joinState}${"/ 3)"}`}</Button>
         </div>
         <div className="relative">
