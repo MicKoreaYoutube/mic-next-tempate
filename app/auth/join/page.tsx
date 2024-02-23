@@ -79,12 +79,14 @@ export default function Join() {
           </div>
           {joinState == 3 ? null : null}
           <Button onClick={() => {
-            stateChanger(joinState + 1)
-            isTabVisible[joinState - 1] = "hidden"
-            changeTabVisiblity([...isTabVisible])
-            isTabVisible[joinState] = "block"
-            changeTabVisiblity([...isTabVisible])
-          }}>{joinState == 3 ? "가입 완료!" : `다음→ ${"("}${joinState}${"/ 3)"}`}</Button>
+            if (joinState <= 3) {
+              stateChanger(joinState + 1);
+              isTabVisible[joinState - 1] = "hidden";
+              changeTabVisiblity([...isTabVisible]);
+              isTabVisible[joinState] = "block";
+              changeTabVisiblity([...isTabVisible]);
+            }
+          }}>{joinState >= 3 ? "가입하기" : `다음→ ${"("}${joinState + 1}${" / 3)"}`}</Button>
         </div>
         <div className="relative">
           <div className="absolute inset-0 flex items-center">
@@ -105,7 +107,7 @@ export default function Join() {
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
           <span className="px-8 text-center text-sm text-muted-foreground">계정이 이미 있나요? <Link href="/auth/login" className="text-blue-500 hover:text-blue-700">로그인→</Link></span>
           <p className="px-8 text-center text-sm text-muted-foreground">
-            로그인 버튼을 누르실 경우, 당신은 {" "}
+            회원 가입 버튼을 누르실 경우, 당신은 {" "}
             <Link
               href="/terms"
               className="underline underline-offset-4 hover:text-primary"

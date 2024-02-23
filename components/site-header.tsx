@@ -27,74 +27,36 @@ import Link from "next/link"
 
 import { siteConfig } from "@/config/site"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
-import {
-  CommandDialog,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command"
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Input } from "@/components/ui/input"
+
 import { MainNav } from "@/components/main-nav"
 import { NavDropDown } from "@/components/dropdown"
-import fuseAPI from "fuse.js"
+import { NavSheet } from "@/components/NavSheet"
 
 export function SiteHeader() {
 
   const [open, setOpen] = useState(false)
 
-  let result
-  let arrayResult: string[] = []
-  const [sortedResult, setSortedResult] = useState(["test"])
+  // let result
+  // let arrayResult: string[] = []
+  // const [sortedResult, setSortedResult] = useState(["test"])
 
-  useEffect(() => {
-    const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
-        e.preventDefault()
-        setOpen((open) => !open)
-      }
-    }
+  // useEffect(() => {
+  //   const down = (e: KeyboardEvent) => {
+  //     if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+  //       e.preventDefault()
+  //       setOpen((open) => !open)
+  //     }
+  //   }
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
-  }, [])
+  //   document.addEventListener("keydown", down)
+  //   return () => document.removeEventListener("keydown", down)
+  // }, [])
 
-  const data = ["Calendar", "Search Emoji", "Calculator", "Profile", "Billing", "Settings"]
-  const fuse = new fuseAPI(data)
+  // const data = ["Calendar", "Search Emoji", "Calculator", "Profile", "Billing", "Settings"]
+  // const fuse = new fuseAPI(data)
 
   return (
     <header className="bg-accent/50 sticky top-0 z-40 w-full font-RixInooAriDuriR backdrop-blur-sm">
@@ -105,22 +67,7 @@ export function SiteHeader() {
           <NavDropDown />
         </div>
         <div className="flex flex-1 items-center justify-end md:hidden">
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu />
-              </Button>
-            </SheetTrigger>
-            <SheetContent>
-              <SheetHeader>
-                <SheetTitle>Are you sure absolutely sure?</SheetTitle>
-                <SheetDescription>
-                  This action cannot be undone. This will permanently delete your account
-                  and remove your data from our servers.
-                </SheetDescription>
-              </SheetHeader>
-            </SheetContent>
-          </Sheet>
+          <NavSheet items={siteConfig.mainNav} />
         </div>
       </div>
     </header>
