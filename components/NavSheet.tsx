@@ -4,6 +4,22 @@ import { Menu } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars } from "@fortawesome/free-solid-svg-icons"
 import { Icons } from "@/components/icons"
+import {
+  Cloud,
+  CreditCard,
+  Github,
+  Keyboard,
+  LifeBuoy,
+  LogOut,
+  Mail,
+  MessageSquare,
+  Plus,
+  PlusCircle,
+  Settings,
+  User,
+  UserPlus,
+  Users,
+} from "lucide-react"
 
 import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
@@ -32,6 +48,40 @@ import {
   NavigaitionMenuListItem
 } from "@/components/ui/navigation-menu"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 interface NavSheetProps {
   items?: NavItem[]
@@ -59,61 +109,28 @@ export function NavSheet({ items }: NavSheetProps) {
             </SheetDescription>
           </SheetHeader>
           <div>
-            <NavigationMenu>
-              <NavigationMenuList className="flex flex-col justify-start">
-                {items?.length ? (
-                  <>
-                    {items?.map(
-                      (item, index) => (
-                        <NavigationMenuItem key={index} className="">
-                          {item.href ? (
-                            <Link href={`${item.href}`} className={`${navigationMenuTriggerStyle()} bg-transparent`}>
-                              {item.title}
-                            </Link>
-                          ) : (
-                            <>
-                              <NavigationMenuTrigger className="bg-transparent">{item.title}</NavigationMenuTrigger>
-                              <NavigationMenuContent>
-                                <ScrollArea>
-                                  <ul className={`${item.mainLink ? "lg:grid-cols-[.75fr_1fr]" : "md:grid-cols-2"} grid gap-3 p-6 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
-                                    {item.mainLink ? (
-                                      <li className="row-span-3">
-                                        <NavigationMenuLink asChild>
-                                          <Link className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
-                                            href={`${item.mainLink?.href}`}>
-                                            <Icons.logo className={`h-6 w-6 ${item.mainLink?.logo ? null : "hidden"}`} />
-                                            <div className="mb-2 mt-4 text-lg font-medium leading-tight">
-                                              {item.mainLink?.title}
-                                            </div>
-                                            <p className="text-sm leading-tight text-muted-foreground">
-                                              {item.mainLink?.description}
-                                            </p>
-                                          </Link>
-                                        </NavigationMenuLink>
-                                      </li>
-                                    ) : null}
-                                    {item.linkList?.map(
-                                      (linkListItem, index) => (
-                                        <NavigaitionMenuListItem
-                                          key={index}
-                                          title={linkListItem.title}
-                                          href={linkListItem.href}
-                                        >
-                                          {linkListItem.description}
-                                        </NavigaitionMenuListItem>
-                                      ))}
-                                  </ul>
-                                </ScrollArea>
-                              </NavigationMenuContent>
-                            </>
-                          )}
-                        </NavigationMenuItem>
-                      )
-                    )}
-                  </>
-                ) : null}
-              </NavigationMenuList>
-            </NavigationMenu>
+            <Accordion type="multiple" className="w-[70%]">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className="p-5 rounded-lg hover:bg-accent">Is it accessible?</AccordionTrigger>
+                <AccordionContent className="border rounded-lg p-5">
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger>Is it styled?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It comes with default styles that matches the other
+                  components&apos; aesthetic.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Is it animated?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It&apos;s animated by default, but you can disable it if you
+                  prefer.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
           <SheetFooter>
             <SheetClose asChild>
