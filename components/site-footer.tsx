@@ -49,7 +49,7 @@ export function SiteFooter() {
                 {siteConfig.footerContent?.map(
                   (item, index) =>
                     <div key={index}>
-                      <h2 className="mb-6 text-2xl font-semibold text-foreground uppercase">{item.title}</h2>
+                      <h2 className="mb-6 text-2xl font-semibold text-foreground">{item.title}</h2>
                       <ul className="text-muted-foreground font-medium">
                         {item.content?.length ? (
                           <>
@@ -68,62 +68,64 @@ export function SiteFooter() {
             ) : null}
           </div>
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
-          <span className="text-sm text-muted-foreground sm:text-center">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
-          <nav className="flex items-center space-x-1">
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 h-3 w-3 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
-                <DropdownMenuGroup>
-                  <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
-                  {siteConfig.FamilySurvice?. length ? (
+        <div>
+          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <div className="sm:flex sm:items-center sm:justify-between">
+            <span className="text-sm text-muted-foreground sm:text-center">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
+            <nav className="hidden md:flex items-center space-x-1">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 h-3 w-3 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
+                  <DropdownMenuGroup>
+                    <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
+                    {siteConfig.FamilySurvice?.length ? (
                       siteConfig.FamilySurvice?.map(
-                        (item, index) => 
-                        <Link key={index} href={item.href}>
-                          <DropdownMenuItem>
-                            <span>{item.name}</span>
-                          </DropdownMenuItem>
-                        </Link>
+                        (item, index) =>
+                          <Link key={index} href={item.href}>
+                            <DropdownMenuItem>
+                              <span>{item.name}</span>
+                            </DropdownMenuItem>
+                          </Link>
                       )
                     ) : null}
-                </DropdownMenuGroup>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Link
-              href={siteConfig.links.micGithub}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })}
+                  </DropdownMenuGroup>
+                </DropdownMenuContent>
+              </DropdownMenu>
+              <Link
+                href={siteConfig.links.micGithub}
+                target="_blank"
+                rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </div>
-            </Link>
-            <Link
-              href={siteConfig.links.micInstagram}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div
-                className={buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })}
+                <div
+                  className={buttonVariants({
+                    size: "icon",
+                    variant: "ghost",
+                  })}
+                >
+                  <FontAwesomeIcon icon={faGithub} className="h-5 w-5" />
+                  <span className="sr-only">GitHub</span>
+                </div>
+              </Link>
+              <Link
+                href={siteConfig.links.micInstagram}
+                target="_blank"
+                rel="noreferrer"
               >
-                <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
-                <span className="sr-only">Instagram</span>
-              </div>
-            </Link>
-            <ThemeToggle />
-          </nav>
+                <div
+                  className={buttonVariants({
+                    size: "icon",
+                    variant: "ghost",
+                  })}
+                >
+                  <FontAwesomeIcon icon={faInstagram} className="h-5 w-5" />
+                  <span className="sr-only">Instagram</span>
+                </div>
+              </Link>
+              <ThemeToggle />
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
