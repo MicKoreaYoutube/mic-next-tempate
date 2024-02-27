@@ -121,6 +121,62 @@ export function NavSheet({ items }: NavSheetProps) {
             </SheetDescription>
           </SheetHeader>
           <Accordion type="single" collapsible className="w-full">
+            {items?.length ? (
+              <>
+                {items?.map(
+                  (item, index) => (
+                    <AccordionItem key={index} value={index.toString()}>
+                      {item.href ? (
+                        <Link href={`${item.href}`}>
+                          {item.title}
+                        </Link>
+                      ) : (
+                        <>
+                          <AccordionTrigger className="bg-transparent">{item.title}</AccordionTrigger>
+                          <AccordionContent>
+                            <ScrollArea>
+                              <ul className={`${item.mainLink ? "grid flex-row grid-cols-[2fr_1fr]" : "grid md:grid-cols-2"} gap-3 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
+                                {item.mainLink ? (
+                                  <li>
+                                    <div className="block-flex rounded-md transition duraition-700 hover:bg-accent">
+                                      <Link className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                                        href={`${item.mainLink?.href}`}>
+                                        <Icons.logo className={`h-6 w-6 ${item.mainLink?.logo ? null : "hidden"}`} />
+                                        <div className="mb-2 mt-4 text-lg font-medium leading-tight">
+                                          {item.mainLink?.title}
+                                        </div>
+                                        <p className="text-sm leading-tight text-muted-foreground">
+                                          {item.mainLink?.description}
+                                        </p>
+                                      </Link>
+                                    </div>
+                                  </li>
+                                ) : null}
+                                <div className={`${item.mainLink ? "flex flex-col justify-between" : "grid grid-cols-2 gap-x-3 gap-y-1"}`}>
+                                  {item.linkList?.map(
+                                    (linkListItem, index) => (
+                                      <Link className={`${item.mainLink ? "block-flex" : "inline-flex"} py-4 px-2 rounded-md transition duraition-700 hover:bg-accent`}
+                                        key={index}
+                                        title={linkListItem.title}
+                                        href={linkListItem.href}
+                                      >
+                                        {linkListItem.description}
+                                      </Link>
+                                    )
+                                  )}
+                                </div>
+                              </ul>
+                            </ScrollArea>
+                          </AccordionContent>
+                        </>
+                      )}
+                    </AccordionItem>
+                  )
+                )}
+              </>
+            ) : null}
+          </Accordion>
+          <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger>Is it accessible?</AccordionTrigger>
               <AccordionContent>
