@@ -98,8 +98,6 @@ export function NavSheet({ items }: NavSheetProps) {
     threshold: 1
   })
 
-  const newArray = [1, 2, 3, 4, 5, 6, 7, 8]
-
   return (
     <>
       <Sheet>
@@ -127,19 +125,19 @@ export function NavSheet({ items }: NavSheetProps) {
                   (item, index) => (
                     <AccordionItem key={index} value={index.toString()}>
                       {item.href ? (
-                        <Link href={`${item.href}`}>
+                        <Link href={`${item.href}`} className="flex flex-1 items-center justify-between py-4 font-medium transition-all">
                           {item.title}
                         </Link>
                       ) : (
                         <>
-                          <AccordionTrigger className="bg-transparent">{item.title}</AccordionTrigger>
+                          <AccordionTrigger>{item.title}</AccordionTrigger>
                           <AccordionContent>
                             <ScrollArea>
-                              <ul className={`${item.mainLink ? "grid flex-row grid-cols-[2fr_1fr]" : "grid md:grid-cols-2"} gap-3 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
+                              <ul className={`${item.mainLink ? "grid grid-cols-[2fr_1fr] flex-row" : "grid md:grid-cols-2"} gap-3`}>
                                 {item.mainLink ? (
-                                  <li>
-                                    <div className="block-flex rounded-md transition duraition-700 hover:bg-accent">
-                                      <Link className="flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                                  <li className="h-full">
+                                    <div className="duraition-700 h-full rounded-md transition hover:bg-accent">
+                                      <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
                                         href={`${item.mainLink?.href}`}>
                                         <Icons.logo className={`h-6 w-6 ${item.mainLink?.logo ? null : "hidden"}`} />
                                         <div className="mb-2 mt-4 text-lg font-medium leading-tight">
@@ -155,7 +153,7 @@ export function NavSheet({ items }: NavSheetProps) {
                                 <div className={`${item.mainLink ? "flex flex-col justify-between" : "grid grid-cols-2 gap-x-3 gap-y-1"}`}>
                                   {item.linkList?.map(
                                     (linkListItem, index) => (
-                                      <Link className={`flex flex-col py-4 px-2 rounded-md transition duraition-700 hover:bg-accent`}
+                                      <Link className={`duraition-700 flex flex-col rounded-md px-2 py-4 transition hover:bg-accent`}
                                         key={index}
                                         href={linkListItem.href}
                                       >
@@ -176,44 +174,15 @@ export function NavSheet({ items }: NavSheetProps) {
               </>
             ) : null}
           </Accordion>
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger>Is it accessible?</AccordionTrigger>
-              <AccordionContent>
-                <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                  {newArray.map((i, key) => (
-                    <div className="block-flex py-4 px-2 rounded-md transition duraition-700 hover:bg-accent" key={key}>
-                      <h1>Box {i}</h1>
-                      <span className="text-muted-foreground">This is Box number {i}!</span>
-                    </div>
-                  ))}
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>Is it styled?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It comes with default styles that matches the other
-                components&apos; aesthetic.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>Is it animated?</AccordionTrigger>
-              <AccordionContent>
-                Yes. It&apos;s animated by default, but you can disable it if you
-                prefer.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
           <SheetFooter>
             <div className="flex flex-col">
               <span className="w-full text-sm text-muted-foreground">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
-              <nav className="flex space-x-1">
+              <nav className="flex flex-col space-x-1 sm:flex-row">
                 <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 h-3 w-3 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
+                  <DropdownMenuTrigger asChild className="xs:w-5">
+                    <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`h-3 w-3 shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
+                  <DropdownMenuContent className="font-RixInooAriDuriR w-1" ref={FamilySurviceRef}>
                     <DropdownMenuGroup>
                       <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
                       {siteConfig.FamilySurvice?.length ? (

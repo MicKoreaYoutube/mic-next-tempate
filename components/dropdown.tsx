@@ -54,7 +54,7 @@ import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
 export function NavDropDown() {
 
-  const [isLogin, changeLoginState] = useState(false)
+  const [isLogin, changeLoginState] = useState(true)
 
   return (
     <>
@@ -67,7 +67,7 @@ export function NavDropDown() {
                   <Avatar>
                     <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                   </Avatar>
-                  <TriangleDownIcon className="block m-2 h-6 w-6" />
+                  <TriangleDownIcon className="m-2 block h-6 w-6" />
                 </div>
               </button>
             </DropdownMenuTrigger>
@@ -151,7 +151,7 @@ export function NavDropDown() {
                 <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu >
+          </DropdownMenu>
         ) : (
           <Button asChild variant="ghost" size="icon">
             <Link href="/auth/login"><FontAwesomeIcon icon={faRightToBracket} className="h-5 w-5" /></Link>

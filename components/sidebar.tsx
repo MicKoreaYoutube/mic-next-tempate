@@ -55,9 +55,9 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
 
   return (
     <>
-      <Command className="border-r rounded-none h-[80vh]">
+      <Command className="h-[80vh] rounded-none border-r">
         <CommandList>
-          <Accordion type="multiple" className="w-full font-TheJamsil5Bold">
+          <Accordion type="multiple" className="font-TheJamsil5Bold w-full">
             {items?.length ? (
               <>
                 {items?.map(
@@ -65,7 +65,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                     <>
                       {item.content?.length ? (
                         <AccordionItem key={index} value={item.title}>
-                          <AccordionTrigger className="m-1 font-normal px-2 py-1.5 data-[state=open]:bg-accent data-[state=open]:text-accent-foreground rounded-md">
+                          <AccordionTrigger className="m-1 rounded-md px-2 py-1.5 font-normal hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-primary data-[state=open]:text-primary-foreground">
                             {item.title}
                           </AccordionTrigger>
                           <AccordionContent>
@@ -120,11 +120,11 @@ export function DocsSidebar({ items }: docsSidebarInterface) {
             items.map(
               (item, index) => (
                 <div key={index} className="py-4">
-                  <Link href={`${item.href ? `/docs/${item.title}` : "#"}`} className={`block my-3 text-lg ${decodeURI(pathName) == `/docs/${item.title}` ? "underline underline-offset-4" : "font-bold"} font-KBO-Dia-Gothic_bold`}>{item.title}</Link>
+                  <Link href={`${item.href ? `/docs/${item.title}` : "#"}`} className={`my-3 block text-lg ${decodeURI(pathName) == `/docs/${item.title}` ? "underline underline-offset-4" : "font-bold"} font-KBO-Dia-Gothic_bold`}>{item.title}</Link>
                   {item.content?.length ? (
                     item.content.map(
                       (contentItem, contentIndex) => (
-                        <Link key={contentIndex} href={`/docs/${item.title}/${contentItem.title}`} className={`block my-1 text-md ${decodeURI(pathName) == `/docs/${item.title}/${contentItem.title}` ? "text-foreground font-bold underline underline-offset-4" : "text-muted-foreground"} font-SUITE-Regular`}>{contentItem.title}</Link>
+                        <Link key={contentIndex} href={`/docs/${item.title}/${contentItem.title}`} className={`text-md my-1 block ${decodeURI(pathName) == `/docs/${item.title}/${contentItem.title}` ? "font-bold text-foreground underline underline-offset-4" : "text-muted-foreground"} font-SUITE-Regular`}>{contentItem.title}</Link>
                       )
                     )
                   ) : null}
@@ -144,8 +144,8 @@ export function ChapterSidebar({ items }: chapterSidebarInterface) {
 
   return (
     <div className="w-32">
-      <div className="w-full p-6 fixed">
-        <h1 className="font-bold font-KBO-Dia-Gothic_bold">Chapter</h1>
+      <div className="fixed w-full p-6">
+        <h1 className="font-KBO-Dia-Gothic_bold font-bold">Chapter</h1>
         <div className="flex flex-col">
           {items?.length ? (
             items.map(
