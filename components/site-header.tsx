@@ -31,7 +31,7 @@ import { useState } from "react"
 
 import { Button } from "@/components/ui/button"
 
-import { MainNav } from "@/components/main-nav"
+import { MainNav } from "@/components/MainNav"
 import { NavDropDown } from "@/components/dropdown"
 import { NavSheet } from "@/components/NavSheet"
 

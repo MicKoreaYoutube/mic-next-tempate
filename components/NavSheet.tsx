@@ -108,71 +108,72 @@ export function NavSheet({ items }: NavSheetProps) {
             <Menu />
           </Button>
         </SheetTrigger>
-          <SheetContent className="font-RixInooAriDuriR h-screen overflow-auto" id="tlqkf">
-            <SheetHeader>
-              <SheetTitle>
-                <Link href="/" className="flex flex-row space-x-2">
-                  <Icons.logo className="h-6 w-6" />
-                  <span className="inline-block font-bold">{siteConfig.name}</span>
-                </Link>
-              </SheetTitle>
-              <SheetDescription>
-                {siteConfig.description}
-              </SheetDescription>
-            </SheetHeader>
-            <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
-                <AccordionContent>
-                  <div className="grid grid-cols-2 gap-x-3 gap-y-1">
-                    {newArray.map((i, key) => (
-                      <div className="block-flex py-4 px-2 rounded-md transition duraition-700 hover:bg-accent" key={key}>
-                        <h1>Box {i}</h1>
-                        <span className="text-muted-foreground">This is Box number {i}!</span>
-                      </div>
-                    ))}
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Is it styled?</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It comes with default styles that matches the other
-                  components&apos; aesthetic.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Is it animated?</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It&apos;s animated by default, but you can disable it if you
-                  prefer.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-            <SheetFooter>
-              <div className="flex flex-col">
-                <span className="w-full text-sm text-muted-foreground">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
-                <nav className="flex items-center space-x-1">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 h-3 w-3 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
-                      <DropdownMenuGroup>
-                        <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
-                        {siteConfig.FamilySurvice?.length ? (
-                          siteConfig.FamilySurvice?.map(
-                            (item, index) =>
-                              <Link key={index} href={item.href}>
-                                <DropdownMenuItem>
-                                  <span>{item.name}</span>
-                                </DropdownMenuItem>
-                              </Link>
-                          )
-                        ) : null}
-                      </DropdownMenuGroup>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
+        <SheetContent className="font-RixInooAriDuriR h-screen overflow-auto" id="tlqkf">
+          <SheetHeader>
+            <SheetTitle>
+              <Link href="/" className="flex flex-row space-x-2">
+                <Icons.logo className="h-6 w-6" />
+                <span className="inline-block font-bold">{siteConfig.name}</span>
+              </Link>
+            </SheetTitle>
+            <SheetDescription>
+              {siteConfig.description}
+            </SheetDescription>
+          </SheetHeader>
+          <Accordion type="single" collapsible className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger>Is it accessible?</AccordionTrigger>
+              <AccordionContent>
+                <div className="grid grid-cols-2 gap-x-3 gap-y-1">
+                  {newArray.map((i, key) => (
+                    <div className="block-flex py-4 px-2 rounded-md transition duraition-700 hover:bg-accent" key={key}>
+                      <h1>Box {i}</h1>
+                      <span className="text-muted-foreground">This is Box number {i}!</span>
+                    </div>
+                  ))}
+                </div>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-2">
+              <AccordionTrigger>Is it styled?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It comes with default styles that matches the other
+                components&apos; aesthetic.
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="item-3">
+              <AccordionTrigger>Is it animated?</AccordionTrigger>
+              <AccordionContent>
+                Yes. It&apos;s animated by default, but you can disable it if you
+                prefer.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+          <SheetFooter>
+            <div className="flex flex-col">
+              <span className="w-full text-sm text-muted-foreground">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
+              <nav className="flex space-x-1">
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 h-3 w-3 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
+                    <DropdownMenuGroup>
+                      <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
+                      {siteConfig.FamilySurvice?.length ? (
+                        siteConfig.FamilySurvice?.map(
+                          (item, index) =>
+                            <Link key={index} href={item.href}>
+                              <DropdownMenuItem>
+                                <span>{item.name}</span>
+                              </DropdownMenuItem>
+                            </Link>
+                        )
+                      ) : null}
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                <div>
                   <Link
                     href={siteConfig.links.micGithub}
                     target="_blank"
@@ -204,10 +205,11 @@ export function NavSheet({ items }: NavSheetProps) {
                     </div>
                   </Link>
                   <ThemeToggle />
-                </nav>
-              </div>
-            </SheetFooter>
-          </SheetContent>
+                </div>
+              </nav>
+            </div>
+          </SheetFooter>
+        </SheetContent>
       </Sheet>
     </>
   )
