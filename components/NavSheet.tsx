@@ -155,7 +155,7 @@ export function NavSheet({ items }: NavSheetProps) {
                                 <div className={`${item.mainLink ? "flex flex-col justify-between" : "grid grid-cols-2 gap-x-3 gap-y-1"}`}>
                                   {item.linkList?.map(
                                     (linkListItem, index) => (
-                                      <Link className={`${item.mainLink ? "block-flex" : "inline-flex"} flex-col py-4 px-2 rounded-md transition duraition-700 hover:bg-accent`}
+                                      <Link className={`flex flex-col py-4 px-2 rounded-md transition duraition-700 hover:bg-accent`}
                                         key={index}
                                         href={linkListItem.href}
                                       >
