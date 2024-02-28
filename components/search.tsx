@@ -228,3 +228,7 @@
 //     </>
 //   )
 // }
+
+export function tlqkftlqkfwja() {
+    return "tlqkf"
+}
