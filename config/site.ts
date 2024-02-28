@@ -213,113 +213,6 @@ const siteConfig = {
       ]
     },
   ],
-  navDropDownContent: [
-    {
-      label: "My Accont",
-      content: [
-        [
-          {
-            icon: ["fas", "house"],
-            title: "11번 내용",
-            href: "/11",
-            shortcut: ""
-          },
-          {
-            icon: ["fas", "house"],
-            title: "12번 내용",
-            href: "/12",
-            shortcut: ""
-          },
-          {
-            icon: ["fas", "house"],
-            title: "13번 내용",
-            href: "/13",
-            shortcut: ""
-          }
-        ],
-        [
-          {
-            icon: ["fas", "house"],
-            title: "21번 내용",
-            href: "/21",
-            shortcut: ""
-          },
-          {
-            icon: ["fas", "house"],
-            title: "22번 내용",
-            href: "/22",
-            shortcut: "",
-            semiDropDown: [
-              [
-                {
-                  icon: ["fas", "house"],
-                  title: "22-1번 내용",
-                  href: "/22-1",
-                  shortcut: ""
-                }
-              ],
-              [
-                {
-                  icon: ["fas", "house"],
-                  title: "22-21번 내용",
-                  href: "/22-21",
-                  shortcut: ""
-                },
-                {
-                  icon: ["fas", "house"],
-                  title: "22-22번 내용",
-                  href: "/22-22",
-                  shortcut: ""
-                }
-              ],
-              [
-                {
-                  icon: ["fas", "house"],
-                  title: "22-23번 내용",
-                  href: "/22-23",
-                  shortcut: ""
-                }
-              ]
-            ]
-          },
-          {
-            icon: ["fas", "house"],
-            title: "23번 내용",
-            href: "/23",
-            shortcut: ""
-          }
-        ],
-        [
-          {
-            icon: ["fas", "house"],
-            title: "31번 내용",
-            href: "/31",
-            shortcut: ""
-          },
-          {
-            icon: ["fas", "house"],
-            title: "32번 내용",
-            href: "/32",
-            shortcut: ""
-          },
-          {
-            icon: ["fas", "house"],
-            title: "33번 내용",
-            href: "/33",
-            shortcut: ""
-          }
-        ],
-        [
-          {
-            icon: ["fas", "house"],
-            title: "로그아웃",
-            href: "/4",
-            shortcut: ""
-          }
-        ]
-      ]
-    },
-  ]
 }
 
 if (siteConfig.mainNav[0].mainLink) {
@@ -328,6 +221,8 @@ if (siteConfig.mainNav[0].mainLink) {
 }
 
 import { dashboardSidebarItem } from "@/types/sidebar"
+import { dropDownItem } from "@/types/dropdown"
+import { string } from "zod"
 
 export const dashboardSidebarContent: dashboardSidebarItem[] = [
   {
@@ -407,6 +302,114 @@ export const dashboardSidebarContent: dashboardSidebarItem[] = [
     ]
   },
 ]
+
+export const navDropDownContent = {
+  label: string,
+  content: [
+    [
+      {
+        icon: ["fas", "house"],
+        title: "11번 내용",
+        href: "/11",
+        shortcut: ""
+      },
+      {
+        icon: ["fas", "house"],
+        title: "12번 내용",
+        href: "/12",
+        shortcut: ""
+      },
+      {
+        icon: ["fas", "house"],
+        title: "13번 내용",
+        href: "/13",
+        shortcut: ""
+      }
+    ],
+    [
+      {
+        icon: ["fas", "house"],
+        title: "21번 내용",
+        href: "/21",
+        shortcut: ""
+      },
+      {
+        icon: ["fas", "house"],
+        title: "22번 내용",
+        href: "/22",
+        shortcut: "",
+        semiDropDown: [
+          [
+            {
+              icon: ["fas", "house"],
+              title: "22-1번 내용",
+              href: "/22-1",
+              shortcut: ""
+            }
+          ],
+          [
+            {
+              icon: ["fas", "house"],
+              title: "22-21번 내용",
+              href: "/22-21",
+              shortcut: ""
+            },
+            {
+              icon: ["fas", "house"],
+              title: "22-22번 내용",
+              href: "/22-22",
+              shortcut: ""
+            }
+          ],
+          [
+            {
+              icon: ["fas", "house"],
+              title: "22-23번 내용",
+              href: "/22-23",
+              shortcut: ""
+            }
+          ]
+        ]
+      },
+      {
+        icon: ["fas", "house"],
+        title: "23번 내용",
+        href: "/23",
+        shortcut: ""
+      }
+    ],
+    [
+      {
+        icon: ["fas", "house"],
+        title: "31번 내용",
+        href: "/31",
+        shortcut: ""
+      },
+      {
+        icon: ["fas", "house"],
+        title: "32번 내용",
+        href: "/32",
+        shortcut: ""
+      },
+      {
+        icon: ["fas", "house"],
+        title: "33번 내용",
+        href: "/33",
+        shortcut: ""
+      }
+    ],
+    [
+      {
+        icon: ["fas", "house"],
+        title: "로그아웃",
+        href: "/4",
+        shortcut: ""
+      }
+    ]
+  ]
+}
+
+const typetlqkf = [[{}, {}, {}], [{}, { semiDropDown: [[{}], [{}, {}, {}], [{}]] }], []]
 
 export { siteConfig }
 

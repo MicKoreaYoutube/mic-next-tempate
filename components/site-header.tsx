@@ -25,7 +25,7 @@ import {
 
 import Link from "next/link"
 
-import { siteConfig } from "@/config/site"
+import { siteConfig, navDropDownContent } from "@/config/site"
 
 import { useState } from "react"
 
@@ -59,12 +59,12 @@ export function SiteHeader() {
   // const fuse = new fuseAPI(data)
 
   return (
-    <header className="bg-accent/50 sticky top-0 z-40 w-full font-RixInooAriDuriR backdrop-blur-sm">
+    <header className="font-RixInooAriDuriR sticky top-0 z-40 w-full bg-accent/50 backdrop-blur-sm">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
         <MainNav items={siteConfig.mainNav} />
         <div className="hidden flex-1 items-center justify-end space-x-4 md:flex">
           {/* <SearchDialog /> */}
-          <NavDropDown />
+          <NavDropDown items={navDropDownContent}/>
         </div>
         <div className="flex flex-1 items-center justify-end md:hidden">
           <NavSheet items={siteConfig.mainNav} />

@@ -52,7 +52,13 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRightToBracket } from '@fortawesome/free-solid-svg-icons'
 
-export function NavDropDown() {
+import { dropDownItem } from "@/types/dropdown"
+
+interface dropDownProps {
+  items: dropDownItem[]
+}
+
+export function NavDropDown({ items }: dropDownProps) {
 
   const [isLogin, changeLoginState] = useState(true)
 
@@ -72,7 +78,18 @@ export function NavDropDown() {
               </button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuLabel>=</DropdownMenuLabel>
+              {items.length ? (
+                <>
+                  {items.map(
+                    (item, index) => {
+                      <DropdownMenuGroup key={index}>
+                        
+                      </DropdownMenuGroup>
+                    }
+                  )}
+                </>
+              ) : null}
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem>
@@ -140,7 +157,7 @@ export function NavDropDown() {
                 <LifeBuoy className="mr-2 h-4 w-4" />
                 <span>Support</span>
               </DropdownMenuItem>
-              <DropdownMenuItem disabled>
+              <DropdownMenuItem disabled={true}>
                 <Cloud className="mr-2 h-4 w-4" />
                 <span>API</span>
               </DropdownMenuItem>

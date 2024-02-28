@@ -48,7 +48,7 @@ export function MainNav({ items }: MainNavProps) {
                           <NavigationMenuTrigger className="bg-transparent">{item.title}</NavigationMenuTrigger>
                           <NavigationMenuContent>
                             <ScrollArea>
-                              <ul className={`${item.mainLink ? "lg:grid-cols-[.75fr_1fr]" : "md:grid-cols-2"} grid gap-3 p-6 w-[300px] md:w-[400px] lg:w-[500px] max-h-[250px]`}>
+                              <ul className={`${item.mainLink ? "lg:grid-cols-[3fr_4fr]" : "md:grid-cols-2"} grid max-h-[250px] w-[300px] gap-3 p-6 md:w-[400px] lg:w-[500px]`}>
                                 {item.mainLink ? (
                                   <li className="row-span-3">
                                     <NavigationMenuLink asChild>

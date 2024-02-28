@@ -133,7 +133,7 @@ export function NavSheet({ items }: NavSheetProps) {
                           <AccordionTrigger>{item.title}</AccordionTrigger>
                           <AccordionContent>
                             <ScrollArea>
-                              <ul className={`${item.mainLink ? "grid grid-cols-[2fr_1fr] flex-row" : "grid md:grid-cols-2"} gap-3`}>
+                              <ul className={`${item.mainLink ? "grid-cols-[3fr_2fr] flex-row" : null} grid gap-3`}>
                                 {item.mainLink ? (
                                   <li className="h-full">
                                     <div className="duraition-700 h-full rounded-md transition hover:bg-accent">
