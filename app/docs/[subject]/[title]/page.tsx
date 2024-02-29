@@ -17,7 +17,7 @@ export default function DocsTitlePage({ params }: { params: { subject: string, t
 
   return (
     <div className="flex flex-row justify-between">
-        <div className="p-12 justify-self-stretch w-full h-[80vh]">{foundObject?.doc ? parse(foundObject?.doc) : notFound()}</div>
+        <div className="h-[80vh] w-full justify-self-stretch p-12">{foundObject?.doc ? parse(foundObject?.doc) : notFound()}</div>
         <ChapterSidebar items={foundObject?.chapter} />
     </div>
   )

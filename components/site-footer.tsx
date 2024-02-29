@@ -31,26 +31,26 @@ export function SiteFooter() {
   })
 
   return (
-    <footer className="bg-accent/50 z-40 inset-x-0 bottom-0 w-full border-t font-RixInooAriDuriR">
+    <footer className="font-RixInooAriDuriR inset-x-0 bottom-0 z-40 w-full border-t bg-accent/50">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link href="/" className="flex items-center space-x-2">
               <Icons.logo className="h-6 w-6" />
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">{siteConfig.name}</span>
+              <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">{siteConfig.name}</span>
             </Link>
             <p className="mt-4 max-w-[400px] text-muted-foreground">
               {siteConfig.description}
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-24 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-24">
             {siteConfig.footerContent?.length ? (
               <>
                 {siteConfig.footerContent?.map(
                   (item, index) =>
                     <div key={index}>
                       <h2 className="mb-6 text-2xl font-semibold text-foreground">{item.title}</h2>
-                      <ul className="text-muted-foreground font-medium">
+                      <ul className="font-medium text-muted-foreground">
                         {item.content?.length ? (
                           <>
                             {item.content?.map(
@@ -69,15 +69,15 @@ export function SiteFooter() {
           </div>
         </div>
         <div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-muted-foreground sm:text-center">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
-            <nav className="hidden md:flex items-center space-x-1">
+            <nav className="hidden items-center space-x-1 md:flex">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`shrink-0 transition-transform duration-200 h-3 w-3 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
+                  <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`h-3 w-3 shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-1 font-RixInooAriDuriR" ref={FamilySurviceRef}>
+                <DropdownMenuContent className="font-RixInooAriDuriR w-1" ref={FamilySurviceRef}>
                   <DropdownMenuGroup>
                     <DropdownMenuLabel>패밀리 서비스</DropdownMenuLabel>
                     {siteConfig.FamilySurvice?.length ? (

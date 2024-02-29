@@ -36,9 +36,9 @@ export default function Join() {
 
   return (
     <>
-      <div className="h-screen mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+      <div className="mx-auto flex h-screen w-full flex-col justify-center space-y-6 sm:w-[350px]">
         <div className="flex flex-col space-y-2 text-center">
-          <h1 className="text-2xl font-semibold tracking-tight font-KBO-Dia-Gothic_bold">
+          <h1 className="font-KBO-Dia-Gothic_bold text-2xl font-semibold tracking-tight">
             회원 가입 - {joinState}
           </h1>
         </div>
@@ -92,17 +92,17 @@ export default function Join() {
           <div className="absolute inset-0 flex items-center">
             <span className="w-full border-t" />
           </div>
-          <div className="relative flex justify-center font-SUITE-Regular">
+          <div className="font-SUITE-Regular relative flex justify-center">
             <span className="bg-background px-2 text-muted-foreground">
               또는
             </span>
           </div>
         </div>
         <div className="flex justify-between">
-          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faGoogle} className="font-bold text-lg" /></Button>
-          <Button variant="ghost" size="icon"><span className="font-bold text-xl">N</span></Button>
-          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faGithub} className="font-bold text-lg" /></Button>
-          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faApple} className="font-bold text-lg" /></Button>
+          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faGoogle} className="text-lg font-bold" /></Button>
+          <Button variant="ghost" size="icon"><span className="text-xl font-bold">N</span></Button>
+          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faGithub} className="text-lg font-bold" /></Button>
+          <Button variant="ghost" size="icon"><FontAwesomeIcon icon={faApple} className="text-lg font-bold" /></Button>
         </div>
         <div className="font-SUITE-Regular flex flex-col justify-center space-y-6">
           <span className="px-8 text-center text-sm text-muted-foreground">계정이 이미 있나요? <Link href="/auth/login" className="text-blue-500 hover:text-blue-700">로그인→</Link></span>

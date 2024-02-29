@@ -19,19 +19,19 @@ export default function Page() {
           <div className="flex flex-col items-start gap-2">
             <InView triggerOnce={true} threshold={1}>
               {({ inView, ref, entry }) => (
-                <h1 className={`text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl font-KBO-Dia-Gothic_bold content animate__animated ${inView ? classToAdd : 'invisible'}`}
+                <h1 className={`font-KBO-Dia-Gothic_bold content animate__animated text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl ${inView ? classToAdd : 'invisible'}`}
                   ref={ref}>
                   Beautifully designed components <br className="hidden sm:inline" />
                   built with Radix UI and Tailwind CSS.
                 </h1>
               )}
             </InView>
-            <p className=" text-lg text-muted-foreground font-SUITE-Regular">
+            <p className=" font-SUITE-Regular text-lg text-muted-foreground">
               Accessible and customizable components that you can copy and paste
               into your apps. Free. Open Source. And Next.js 13 Ready.
             </p>
           </div>
-          <div className="flex gap-4 font-TheJamsil5Bold">
+          <div className="font-TheJamsil5Bold flex gap-4">
             <Link
               href={siteConfig.links.shadcnuiDocs}
               target="_blank"
@@ -56,19 +56,19 @@ export default function Page() {
           <div className="flex flex-col items-start gap-2">
             <InView triggerOnce={true} threshold={1}>
               {({ inView, ref, entry }) => (
-                <h1 className={`text-3xl text-background font-extrabold leading-tight tracking-tighter md:text-4xl font-KBO-Dia-Gothic_bold content animate__animated ${inView ? classToAdd : 'invisible'}`}
+                <h1 className={`font-KBO-Dia-Gothic_bold content animate__animated text-3xl font-extrabold leading-tight tracking-tighter text-background md:text-4xl ${inView ? classToAdd : 'invisible'}`}
                   ref={ref}>
                   Beautifully designed components <br className="hidden sm:inline" />
                   built with Radix UI and Tailwind CSS.
                 </h1>
               )}
             </InView>
-            <p className="text-lg text-muted-foreground font-SUITE-Regular">
+            <p className="font-SUITE-Regular text-lg text-muted-foreground">
               Accessible and customizable components that you can copy and paste
               into your apps. Free. Open Source. And Next.js 13 Ready.
             </p>
           </div>
-          <div className="flex gap-4 font-TheJamsil5Bold">
+          <div className="font-TheJamsil5Bold flex gap-4">
             <Link
               href={siteConfig.links.shadcnuiDocs}
               target="_blank"
@@ -93,19 +93,19 @@ export default function Page() {
           <div className="flex flex-col items-start gap-2">
             <InView triggerOnce={true} threshold={1}>
               {({ inView, ref, entry }) => (
-                <h1 className={`text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl font-KBO-Dia-Gothic_bold content animate__animated ${inView ? classToAdd : 'invisible'}`}
+                <h1 className={`font-KBO-Dia-Gothic_bold content animate__animated text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl ${inView ? classToAdd : 'invisible'}`}
                   ref={ref}>
                   Beautifully designed components <br className="hidden sm:inline" />
                   built with Radix UI and Tailwind CSS.
                 </h1>
               )}
             </InView>
-            <p className=" text-lg text-muted-foreground font-SUITE-Regular">
+            <p className=" font-SUITE-Regular text-lg text-muted-foreground">
               Accessible and customizable components that you can copy and paste
               into your apps. Free. Open Source. And Next.js 13 Ready.
             </p>
           </div>
-          <div className="flex gap-4 font-TheJamsil5Bold">
+          <div className="font-TheJamsil5Bold flex gap-4">
             <Link
               href={siteConfig.links.shadcnuiDocs}
               target="_blank"
@@ -130,19 +130,19 @@ export default function Page() {
           <div className="flex flex-col items-start gap-2">
             <InView triggerOnce={true} threshold={1}>
               {({ inView, ref, entry }) => (
-                <h1 className={`text-3xl text-background font-extrabold leading-tight tracking-tighter md:text-4xl font-KBO-Dia-Gothic_bold content animate__animated ${inView ? classToAdd : 'invisible'}`}
+                <h1 className={`font-KBO-Dia-Gothic_bold content animate__animated text-3xl font-extrabold leading-tight tracking-tighter text-background md:text-4xl ${inView ? classToAdd : 'invisible'}`}
                   ref={ref}>
                   Beautifully designed components <br className="hidden sm:inline" />
                   built with Radix UI and Tailwind CSS.
                 </h1>
               )}
             </InView>
-            <p className="text-lg text-muted-foreground font-SUITE-Regular">
+            <p className="font-SUITE-Regular text-lg text-muted-foreground">
               Accessible and customizable components that you can copy and paste
               into your apps. Free. Open Source. And Next.js 13 Ready.
             </p>
           </div>
-          <div className="flex gap-4 font-TheJamsil5Bold">
+          <div className="font-TheJamsil5Bold flex gap-4">
             <Link
               href={siteConfig.links.shadcnuiDocs}
               target="_blank"
