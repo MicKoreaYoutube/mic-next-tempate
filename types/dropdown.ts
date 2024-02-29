@@ -1,10 +1,17 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 
 export interface dropDownItem {
-  icon?: IconProp
-  title: string
-  href?: string
-  shortcut?: string
-  disable?: boolean
-  semiDropDown?: dropDownItem[][]
-}[]
+  label: string
+  content: {
+    title: string
+    icon?: IconProp
+    href?: string
+    shortcut?: string
+    semiDropDown?: {
+      title: string
+      icon?: IconProp
+      href?: string
+      shortcut?: string
+    }[][]
+  }[][]
+}

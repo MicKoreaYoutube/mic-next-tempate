@@ -303,8 +303,8 @@ export const dashboardSidebarContent: dashboardSidebarItem[] = [
   },
 ]
 
-export const navDropDownContent = {
-  label: string,
+export const navDropDownContent: dropDownItem = {
+  label: "My Account",
   content: [
     [
       {

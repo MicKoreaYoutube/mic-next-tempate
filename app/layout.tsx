@@ -51,7 +51,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           )}
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="relative flex flex-col">
+            <div className="relative flex flex-col duration-700">
               <SiteHeader />
               {children}
               <SiteFooter />
