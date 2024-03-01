@@ -48,7 +48,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@/components/ui/avatar"
-import { LoadingComp } from "@/components/loadingComp"
+import { LoadingComp } from "@/components/loading-comp"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'

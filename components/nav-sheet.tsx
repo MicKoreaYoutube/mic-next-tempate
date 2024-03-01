@@ -179,8 +179,8 @@ export function NavSheet({ items }: NavSheetProps) {
               <span className="w-full text-sm text-muted-foreground">© 2023 <Link href="/" className="hover:underline">{siteConfig.name}™</Link>. All Rights Reserved.</span>
               <nav className="flex flex-col space-x-1 sm:flex-row">
                 <DropdownMenu>
-                  <DropdownMenuTrigger asChild className="xs:w-5">
-                    <Button variant="outline">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`h-3 w-3 shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="outline" className="w-36">패밀리 서비스&nbsp;<FontAwesomeIcon icon={faChevronDown} className={`h-3 w-3 shrink-0 transition-transform duration-200 ${FamilySurviceRefInView ? "rotate-180" : null}`} /></Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="font-RixInooAriDuriR w-1" ref={FamilySurviceRef}>
                     <DropdownMenuGroup>
