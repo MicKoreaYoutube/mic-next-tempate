@@ -226,23 +226,9 @@ import { string } from "zod"
 
 export const dashboardSidebarContent: dashboardSidebarItem[] = [
   {
-    title: "1번줄",
-    content: [
-      {
-        icon: ["fas", "house"],
-        title: "11번 내용",
-        href: "/11",
-        shortcut: ""
-      },
-      {
-        title: "12번 내용",
-        href: "/12"
-      },
-      {
-        title: "13번 내용",
-        href: "/13"
-      }
-    ]
+    icon: ["fas", "house"],
+    title: "Dashboard",
+    href: "/dashboard"
   },
   {
     title: "2번줄",

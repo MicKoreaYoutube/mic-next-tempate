@@ -50,7 +50,7 @@ interface chapterSidebarInterface {
 export function DashboardSidebar({ items }: dashboardSidebarInterface) {
 
   const pathName = usePathname()
-  
+
   library.add(fas, far, fab)
 
   return (
@@ -76,7 +76,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                       <CommandItem>
                                         {contentItem.icon ? (
-                                          <FontAwesomeIcon icon={contentItem.icon} size="lg"/>
+                                          <FontAwesomeIcon icon={contentItem.icon} size="lg" />
                                         ) : null}
                                         <span className="text-md">{parse(contentItem.title)}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
@@ -89,8 +89,11 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                           </AccordionContent>
                         </AccordionItem>
                       ) : (
-                        <Link href={`/${item.href}`} key={index}>
-                          <CommandItem className="m-1">
+                        <Link href={`${item.href}`} key={index}>
+                          <CommandItem className="m-1 data-[here=true]:bg-primary data-[here=true]:text-primary-foreground" data-here={`${pathName == item.href}`}>
+                            {item.icon ? (
+                              <FontAwesomeIcon icon={item.icon} />
+                            ) : null}
                             <span className="text-md">{item.title}</span>
                             <CommandShortcut>{item.shortcut}</CommandShortcut>
                           </CommandItem>

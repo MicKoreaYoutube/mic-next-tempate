@@ -20,7 +20,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         <ResizablePanelGroup
           direction="horizontal"
         >
-          <ResizablePanel defaultSize={13} maxSize={13} minSize={4}>
+          <ResizablePanel defaultSize={13} maxSize={13} minSize={4} collapsible={true} collapsedSize={7}>
             <DashboardSidebar items={dashboardSidebarContent} />
           </ResizablePanel>
           <ResizableHandle withHandle/>
