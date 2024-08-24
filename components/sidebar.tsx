@@ -37,6 +37,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 
 interface dashboardSidebarInterface {
   items?: dashboardSidebarItem[]
+  isCollapsed?: boolean
 }
 
 interface docsSidebarInterface {
@@ -47,7 +48,7 @@ interface chapterSidebarInterface {
   items?: string[] | undefined
 }
 
-export function DashboardSidebar({ items }: dashboardSidebarInterface) {
+export function DashboardSidebar({ items, isCollapsed }: dashboardSidebarInterface) {
 
   const pathName = usePathname()
 
@@ -55,7 +56,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
 
   return (
     <>
-      <Command className="h-[80vh] rounded-none border-r">
+      <Command className={`h-[80vh] rounded-none border-r ${isCollapsed}`} data-isCollapsed={isCollapsed}>
         <CommandList>
           <Accordion type="multiple" className="font-TheJamsil5Bold w-full">
             {items?.length ? (
@@ -66,9 +67,14 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                       {item.content?.length ? (
                         <AccordionItem key={index} value={item.title}>
                           <AccordionTrigger className="m-1 rounded-md px-2 py-1.5 font-normal hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-primary data-[state=open]:text-primary-foreground">
-                            {item.title}
+                            <div className="flex">
+                              {item.icon ? (
+                                <FontAwesomeIcon icon={item.icon} className="mr-1 mt-0.5 text-xl" fixedWidth />
+                              ) : null}
+                              {item.title}
+                            </div>
                           </AccordionTrigger>
-                          <AccordionContent>
+                          <AccordionContent className="ml-2">
                             <CommandGroup>
                               <>
                                 {item.content?.map(
@@ -76,7 +82,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                                     <Link href={contentItem.href} key={`${index} ${contentIndex}`}>
                                       <CommandItem>
                                         {contentItem.icon ? (
-                                          <FontAwesomeIcon icon={contentItem.icon} size="lg" />
+                                          <FontAwesomeIcon icon={contentItem.icon} className="mr-1 text-xl" fixedWidth />
                                         ) : null}
                                         <span className="text-md">{parse(contentItem.title)}</span>
                                         <CommandShortcut>{contentItem.shortcut}</CommandShortcut>
@@ -92,7 +98,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
                         <Link href={`${item.href}`} key={index}>
                           <CommandItem className="m-1 data-[here=true]:bg-primary data-[here=true]:text-primary-foreground" data-here={`${pathName == item.href}`}>
                             {item.icon ? (
-                              <FontAwesomeIcon icon={item.icon} />
+                              <FontAwesomeIcon icon={item.icon} className="mr-1 text-xl" fixedWidth />
                             ) : null}
                             <span className="text-md">{item.title}</span>
                             <CommandShortcut>{item.shortcut}</CommandShortcut>
@@ -107,6 +113,7 @@ export function DashboardSidebar({ items }: dashboardSidebarInterface) {
           </Accordion>
         </CommandList>
       </Command>
+      
     </>
   )
 }
