@@ -137,7 +137,7 @@ export function NavSheet({ items }: NavSheetProps) {
                                 {item.mainLink ? (
                                   <li className="h-full">
                                     <div className="duraition-700 h-full rounded-md transition hover:bg-accent">
-                                      <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-4 no-underline outline-none focus:shadow-md"
+                                      <Link className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-4 no-underline outline-hidden focus:shadow-md"
                                         href={`${item.mainLink?.href}`}>
                                         <Icons.logo className={`h-6 w-6 ${item.mainLink?.logo ? null : "hidden"}`} />
                                         <div className="mb-2 mt-4 text-lg font-medium leading-tight">

@@ -12,8 +12,8 @@ const cardVariants = cva(
         false: "border-0"
       },
       shadow: {
-        default: "shadow",
-        sm: "shadow-sm",
+        default: "shadow-sm",
+        sm: "shadow-xs",
         md: "shadow-md",
         lg: "shadow-lg",
         xl: "shadow-xl",
