@@ -92,13 +92,13 @@ export function NavDropDown({ items }: dropDownProps) {
               {items?.content.length ? (
                 <>
                   {items.content.map((item, index) => (
-                    <>
+                    <div key={index}>
                       <DropdownMenuSeparator />
-                      <DropdownMenuGroup key={index}>
+                      <DropdownMenuGroup>
                         {item.length ? (
                           <>
                             {item.map((itemInItem, itemInItemIndex) => (
-                              <>
+                              <div key={itemInItemIndex}>
                                 {itemInItem.semiDropDown ? (
                                   <DropdownMenuSub>
                                     <DropdownMenuSubTrigger>
@@ -131,7 +131,7 @@ export function NavDropDown({ items }: dropDownProps) {
                                     </DropdownMenuPortal>
                                   </DropdownMenuSub>
                                 ) : (
-                                  <DropdownMenuItem key={itemInItemIndex}>
+                                  <DropdownMenuItem>
                                     <Link href={`${itemInItem.href ? itemInItem.href : null}`}>
                                       {itemInItem.icon ? (
                                         <FontAwesomeIcon icon={itemInItem.icon} className="mr-2 h-4 w-4" />
@@ -143,12 +143,12 @@ export function NavDropDown({ items }: dropDownProps) {
                                     </Link>
                                   </DropdownMenuItem>
                                 )}
-                              </>
+                              </div>
                             ))}
                           </>
                         ) : null}
                       </DropdownMenuGroup>
-                    </>
+                    </div>
                   ))}
                 </>
               ) : null}
